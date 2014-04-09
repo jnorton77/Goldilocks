@@ -1,0 +1,36 @@
+<div class="signup-container">
+  <h2>Sign up</h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, autofocus: true %>
+
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, autofocus: true %>
+
+    <%= f.label :geolocation %>
+    <%= f.text_field :geolocation, autofocus: true %><br>
+
+    <%= f.radio_button :gender, "male" %>
+    <%= f.label :gender, "male", :value => "male"%><br>
+    <%= f.radio_button :gender, "female" %>
+    <%= f.label :gender, "female", :value => "female"%><br>
+    <%= f.radio_button :gender, "something more awesome" %>
+    <%= f.label :gender, "something more awesome", :value =>  "something more awesome" %><br>
+    <%= f.radio_button :gender, "angry" %>
+    <%= f.label :gender, "Why are you so narrow-minded?" %><br><br>
+
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "off" %>
+
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+
+    <%= f.submit "Sign up", :class => "signup-button" %>
+  <% end %>
+</div>
+
+<%= devise_error_messages! %>
