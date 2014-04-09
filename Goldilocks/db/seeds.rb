@@ -17,18 +17,10 @@
 # todos: no comments get assigned to answers
 
 
-require 'faker'
+# require 'faker'
 
-num_users = 3
-num_questions = 5
-num_answers = 100
-
-num_users.times do
-  User.create!(first_name: Faker::Name.first_name, email: Faker::Internet.email, password: "1234mary", password_confirmation: "1234mary")
-end
-
-Question.all.each do |q|
-  q.author = User.all.sample
-end
-
-Question.create!(name: cat_name) }
+rand(100).times { Response.create(answer: "panic") }
+rand(100).times { Response.create(answer: "panic edge") }
+rand(100).times { Response.create(answer: "learning") }
+rand(100).times { Response.create(answer: "comfort edge") }
+rand(100).times { Response.create(answer: "comfort") }
