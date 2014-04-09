@@ -2,4 +2,11 @@
 <%= link_to "Go to My Profile", controller: "users", action: "show", id: current_user.id %>
 <% end %>
 
+<h1>DBC Mental State Snapshot</h1>
+<h3>panic -- <%= Response.where(:answer => "panic").count %></h3>
+<h3>panic edge -- <%= Response.where(:answer => "panic edge").count %></h3>
+<h3>learning -- <%= Response.where(:answer => "learning").count %></h3>
+<h3>comfort edge -- <%= Response.where(:answer => "comfort edge").count %></h3>
+<h3>comfort -- <%= Response.where(:answer => "comfort").count %></h3>
+
 
