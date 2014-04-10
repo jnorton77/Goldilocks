@@ -19,8 +19,8 @@
 
 # require 'faker'
 
-rand(100).times { Response.create(answer: "panic") }
-rand(100).times { Response.create(answer: "panic edge") }
-rand(100).times { Response.create(answer: "learning") }
-rand(100).times { Response.create(answer: "comfort edge") }
-rand(100).times { Response.create(answer: "comfort") }
+rand(100).times { Response.create(answer: "panic", user_id: 1) }
+rand(100).times { Response.create(answer: "panic edge", user_id: 1) }
+rand(100).times { Response.create(answer: "learning", user_id: 1) }
+rand(100).times { Response.create(answer: "comfort edge", user_id: 1) }
+rand(100).times { Response.create(answer: "comfort", user_id: 1) }
