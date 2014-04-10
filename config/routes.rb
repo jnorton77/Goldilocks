@@ -5,8 +5,9 @@ Goldilocks::Application.routes.draw do
   get 'users/:id/results' => 'users#retrieve_results'
   delete :sessions, to: redirect('/home/logout')
 
-  get 'users/:id' => 'users#show'
-
+  resources :users do
+    resources :responses
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
