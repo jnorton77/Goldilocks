@@ -6,4 +6,4 @@
 # the Rack::Timeout value should be lower than the unicorn timeout if you plan on using the stack trace
 # produced by Rack::Timeout for debugging.
 
-Rack::Timeout.timeout = 10  # seconds
+# Rack::Timeout.timeout = 10  # seconds
