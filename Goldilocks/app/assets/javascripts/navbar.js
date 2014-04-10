@@ -13,6 +13,6 @@ $(document).ready(function() {
   $('.error-messages').on("click", function(){
   $(this).hide();
     alert("Like a boss!");
-  })
+  });
 
 });
