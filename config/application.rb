@@ -5,6 +5,7 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
+# config.serve_static_assets = true
 
 module Goldilocks
   class Application < Rails::Application
