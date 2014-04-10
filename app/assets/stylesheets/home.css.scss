@@ -1,0 +1,37 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Fjord One'
+}
+
+.container {
+  margin-top: 120px;
+}
+
+.row {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+body{
+  top: 80px;
+  /*background-image:url('/background.png');*/
+}
+
+input[type=checkbox] {
+  margin-right: 8px;
+}
+
+input[type=submit]:hover {
+  background: #104E8B;
+  color: #4E8B10;
+  cursor: pointer;
+}

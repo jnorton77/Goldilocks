@@ -1,0 +1,33 @@
+.logo {
+  line-height: 80px;
+  -webkit-filter: drop-shadow(1px 1px 2px #666);
+  filter: drop-shadow(1px 1px 2px #666);
+}
+
+.navbar{
+  position: fixed;
+  top: 0;
+  height: 80px;
+  line-height: 80px;
+  background: #104E8B;
+  box-shadow: 0px 1px #ccc;
+}
+
+.navbar-link {
+  padding-left: 8px;
+  padding-right: 12px;
+  border-right: 2px solid white;
+  color: #CDC8B1;
+}
+
+.navbar-link:last-of-type {
+  border-right: none;
+}
+
+.navbar-text  {
+  float: right;
+  margin-top: 0;
+  margin-right: 20px;
+  color: #CDC8B1;
+  text-shadow: 1px 1px 5px #333;
+}
