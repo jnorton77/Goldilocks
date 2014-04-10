@@ -1,3 +1,9 @@
+
+config/secret_keys.yml
+config/deploy.rb
+congfig/database.yml
+
+db/schema.rb
 *.gem
 *.rbc
 /.config
@@ -7,8 +13,9 @@
 /spec/reports/
 /test/tmp/
 /test/version_tmp/
-/tmp/
-/log/development.log
+tmp/*
+log/*.log
+
 
 ## Specific to RubyMotion:
 .dat*
@@ -21,7 +28,7 @@ build/
 /doc/
 /rdoc/
 
-## Environment normalisation:
+## Environment normalization:
 /.bundle/
 /lib/bundler/man/
 
@@ -33,3 +40,6 @@ build/
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
+
+# Ignore application configuration
+/config/application.yml

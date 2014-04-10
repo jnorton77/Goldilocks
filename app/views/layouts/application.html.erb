@@ -8,6 +8,8 @@
 </head>
 <body>
 <%= render "shared/navbar" %>
+<%= render "shared/fbauth" %>
+<div class="facebookauth" > <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> </div>
 <div class="container">
   <%= yield %>
 </div>
