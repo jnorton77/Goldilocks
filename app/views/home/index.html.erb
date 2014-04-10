@@ -9,9 +9,6 @@
 <h3>comfort edge -- <%= Response.where(:answer => "comfort edge").count %></h3>
 <h3>comfort -- <%= Response.where(:answer => "comfort").count %></h3>
 
-<%= form_for Response.new, url: user_responses_path(@user) do |f| %>
-  <%= f.hidden_field :answer, value: "panic" %>
-  <%= f.submit "create a response" %>
-<% end %>
+
 
 
