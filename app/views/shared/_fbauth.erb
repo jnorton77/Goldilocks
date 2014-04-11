@@ -2,12 +2,14 @@
 <script type="text/javascript">
   window.fbAsyncInit = function() {
     FB.init({
-      appId  : '#{ENV['FB_KEY']}',
+      appId  : '<%=ENV['FACEBOOK_KEY']%>',
       status : true, // check login status
       cookie : true, // enable cookies to allow the server to access the session
       xfbml  : true  // parse XFBML
     });
   };
+
+// appId should be in form of '#{ENV['FACEBOOK_KEY']}' from secret_key.yml file (see how it is upcased in config/application.rb)
 
   (function(d) {
     var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
