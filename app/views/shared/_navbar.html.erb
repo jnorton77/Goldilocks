@@ -1,9 +1,8 @@
 <div class="navbar row">
-  <h1 class="logo" style="float:left; color:white">Goldilocks Logo Placeholder</h1>
+  <h1 class="logo" style="float:left; color:white">EQUANIMITY</h1>
   <p class="navbar-text">
   <% if user_signed_in? %>
-    <span class="login-email-notification"><%= current_user.email %></span>
-    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+    <span class="login-email-notification"><%= link_to current_user.email, controller: "users", action: "show", id: current_user.id %></span>
     <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
   <% else %>
     <%= link_to "Register", new_user_registration_path, :class => 'navbar-link', :id => "navbar-register"  %>
