@@ -1,41 +1,5 @@
-<canvas id="myChart" width="400" height="400"></canvas>
+<%= javascript_include_tag "d3linegraph" %>
 
-<script>
-  var ctx = document.getElementById("myChart").getContext("2d");
-
-  $(document).ready(function() {
-    $.ajax({
-      url: "/users/<%=@user.id%>/results",
-      type: "get"
-    }).done(function(data) {
-      var data = [
-    {
-      color:"#F38630",
-      value: data.panic
-    },
-    {
-      color:"#F38630",
-      value: data.panic_edge
-    },
-    {
-      color:"#F38630",
-      value: data.comfort
-    },
-    {
-      color:"#F38630",
-      value: data.comfort_edge
-    },
-    {
-      color:"#F38630",
-      value: data.comfort
-    }
-  ]
-    new Chart(ctx).Pie(data);
-    }).fail(function(data) {
-
-    }).always(function(data) {
-
-    })
-  })
-
-  </script>
+<%= javascript_tag do %>
+  userId = <%= @user.id %>
+<% end %>
