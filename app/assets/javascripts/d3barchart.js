@@ -42,19 +42,19 @@ var height = max_y + 20
 var padding = 10;
 
 var x = d3.scale.linear()
-                .range([0, width]);
+                .range([0, max_x]);
 var y = d3.scale.linear()
-                .range([height, 0]);
+                .range([0, max_y]);
 
 var xAxis = d3.svg.axis()
                   .scale(x)
                   .orient("bottom")
-                  .ticks(12);
+                  .ticks(6);
 
 var yAxis = d3.svg.axis()
                   .scale(y)
                   .orient("left")
-                  .ticks(12);
+                  .ticks(6);
 
 $(document).ready(function() {
 

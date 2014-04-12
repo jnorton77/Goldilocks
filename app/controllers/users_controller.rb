@@ -22,7 +22,7 @@ class UsersController < ApplicationController
       "user_panic_edge" => Response.where(:answer => "panic edge", :user_id => @user.id).count,
       "user_learning" => Response.where(:answer => "learning", :user_id => @user.id).count,
       "user_comfort_edge" => Response.where(:answer => "comfort edge", :user_id => @user.id).count,
-      "total_comfort" => Response.where(:answer => "comfort").count,
+      "comfort" => Response.where(:answer => "comfort", :user_id => @user.id).count,
       "total_panic" => Response.where(:answer => "panic").count,
       "total_panic_edge" => Response.where(:answer => "panic edge").count,
       "total_learning" => Response.where(:answer => "learning").count,
