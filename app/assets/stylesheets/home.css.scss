@@ -5,13 +5,15 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-font-smoothing: antialiased;
-  font-family: 'Fjord One'
+  font-family: 'Allerta', sans-serif;
 }
 
 .container {
-  margin-top: 120px;
+  margin: 120px auto;
+  width: 700px;
 }
+
+/*.quotes {display: none;}​*/
 
 .row {
   width: 100%;
@@ -19,6 +21,11 @@
 
 a {
   text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  color: white;
 }
 
 body{
