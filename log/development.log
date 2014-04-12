@@ -1,0 +1,724 @@
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-12 11:39:25 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic'
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic edge'[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'learning'
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort edge'[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort'
+  Rendered home/index.html.erb within layouts/application (39.8ms)
+  Rendered shared/_navbar.html.erb (2.4ms)
+Completed 200 OK in 187ms (Views: 165.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-12 11:39:26 -0500
+
+
+Started GET "/assets/d3.css?body=1" for 127.0.0.1 at 2014-04-12 11:39:26 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-04-12 11:39:26 -0500
+
+
+Started GET "/assets/signup.css?body=1" for 127.0.0.1 at 2014-04-12 11:39:26 -0500
+
+
+Started GET "/assets/signin.css?body=1" for 127.0.0.1 at 2014-04-12 11:39:26 -0500
+
+
+Started GET "/assets/navbar.css?body=1" for 127.0.0.1 at 2014-04-12 11:39:26 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-12 11:39:26 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-12 11:39:26 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-12 11:39:26 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-12 11:39:26 -0500
+
+
+Started GET "/assets/d3.min.js?body=1" for 127.0.0.1 at 2014-04-12 11:39:26 -0500
+
+
+Started GET "/assets/navbar.js?body=1" for 127.0.0.1 at 2014-04-12 11:39:26 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-12 11:39:26 -0500
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-04-12 11:39:44 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (7.1ms)
+  Rendered shared/_navbar.html.erb (0.8ms)
+Completed 200 OK in 36ms (Views: 14.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/d3barchart.js?body=1" for 127.0.0.1 at 2014-04-12 11:39:44 -0500
+
+
+Started GET "/assets/d3linegraph.js?body=1" for 127.0.0.1 at 2014-04-12 11:39:44 -0500
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2014-04-12 11:40:15 -0500
+Processing by UsersController#retrieve_ind_user_results as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic' AND "responses"."user_id" = 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic edge' AND "responses"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'learning' AND "responses"."user_id" = 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort edge' AND "responses"."user_id" = 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort' AND "responses"."user_id" = 1[0m
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-04-12 11:40:46 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (40.3ms)
+  Rendered shared/_navbar.html.erb (0.7ms)
+Completed 200 OK in 52ms (Views: 50.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-12 11:47:50 -0500
+Processing by HomeController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic'[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic edge'
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'learning'[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort edge'
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort'[0m
+  Rendered home/index.html.erb within layouts/application (4.3ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-04-12 11:47:50 -0500
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-04-12 11:54:07 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+Completed 200 OK in 25ms (Views: 8.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-04-12 11:54:07 -0500
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2014-04-12 11:54:07 -0500
+Processing by UsersController#retrieve_ind_user_results as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic' AND "responses"."user_id" = 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic edge' AND "responses"."user_id" = 1[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'learning' AND "responses"."user_id" = 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort edge' AND "responses"."user_id" = 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort' AND "responses"."user_id" = 1
+Completed 200 OK in 20ms (Views: 0.5ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-04-12 12:01:03 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+  Rendered shared/_navbar.html.erb (0.7ms)
+Completed 200 OK in 125ms (Views: 122.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-12 12:01:03 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-04-12 12:01:03 -0500
+
+
+Started GET "/assets/d3.css?body=1" for 127.0.0.1 at 2014-04-12 12:01:03 -0500
+
+
+Started GET "/assets/navbar.css?body=1" for 127.0.0.1 at 2014-04-12 12:01:03 -0500
+
+
+Started GET "/assets/signin.css?body=1" for 127.0.0.1 at 2014-04-12 12:01:03 -0500
+
+
+Started GET "/assets/signup.css?body=1" for 127.0.0.1 at 2014-04-12 12:01:03 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-12 12:01:03 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-12 12:01:03 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-12 12:01:03 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-12 12:01:03 -0500
+
+
+Started GET "/assets/d3.min.js?body=1" for 127.0.0.1 at 2014-04-12 12:01:03 -0500
+
+
+Started GET "/assets/navbar.js?body=1" for 127.0.0.1 at 2014-04-12 12:01:03 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-12 12:01:03 -0500
+
+
+Started GET "/assets/d3linegraph.js?body=1" for 127.0.0.1 at 2014-04-12 12:01:03 -0500
+
+
+Started GET "/assets/d3barchart.js?body=1" for 127.0.0.1 at 2014-04-12 12:01:03 -0500
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2014-04-12 12:01:03 -0500
+Processing by UsersController#retrieve_ind_user_results as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic' AND "responses"."user_id" = 1[0m
+  [1m[35m (2.3ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic edge' AND "responses"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'learning' AND "responses"."user_id" = 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort edge' AND "responses"."user_id" = 1
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort' AND "responses"."user_id" = 1[0m
+Completed 200 OK in 18ms (Views: 0.9ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-04-12 12:02:02 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (5.8ms)
+  Rendered shared/_navbar.html.erb (0.8ms)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-12 12:02:02 -0500
+
+
+Started GET "/assets/d3.css?body=1" for 127.0.0.1 at 2014-04-12 12:02:02 -0500
+
+
+Started GET "/assets/signin.css?body=1" for 127.0.0.1 at 2014-04-12 12:02:02 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-12 12:02:02 -0500
+
+
+Started GET "/assets/navbar.css?body=1" for 127.0.0.1 at 2014-04-12 12:02:02 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-04-12 12:02:02 -0500
+
+
+Started GET "/assets/signup.css?body=1" for 127.0.0.1 at 2014-04-12 12:02:02 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-12 12:02:02 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-12 12:02:02 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-12 12:02:02 -0500
+
+
+Started GET "/assets/d3.min.js?body=1" for 127.0.0.1 at 2014-04-12 12:02:02 -0500
+
+
+Started GET "/assets/navbar.js?body=1" for 127.0.0.1 at 2014-04-12 12:02:02 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-12 12:02:02 -0500
+
+
+Started GET "/assets/d3linegraph.js?body=1" for 127.0.0.1 at 2014-04-12 12:02:02 -0500
+
+
+Started GET "/assets/d3barchart.js?body=1" for 127.0.0.1 at 2014-04-12 12:02:02 -0500
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2014-04-12 12:02:03 -0500
+Processing by UsersController#retrieve_ind_user_results as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic' AND "responses"."user_id" = 1
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic edge' AND "responses"."user_id" = 1[0m
+  [1m[35m (5.3ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'learning' AND "responses"."user_id" = 1
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort edge' AND "responses"."user_id" = 1[0m
+  [1m[35m (1.6ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort' AND "responses"."user_id" = 1
+Completed 200 OK in 50ms (Views: 1.1ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-04-12 12:24:03 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+  Rendered shared/_navbar.html.erb (0.5ms)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-12 12:24:03 -0500
+
+
+Started GET "/assets/d3.css?body=1" for 127.0.0.1 at 2014-04-12 12:24:03 -0500
+
+
+Started GET "/assets/signup.css?body=1" for 127.0.0.1 at 2014-04-12 12:24:03 -0500
+
+
+Started GET "/assets/navbar.css?body=1" for 127.0.0.1 at 2014-04-12 12:24:03 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-04-12 12:24:03 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-12 12:24:03 -0500
+
+
+Started GET "/assets/signin.css?body=1" for 127.0.0.1 at 2014-04-12 12:24:03 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-12 12:24:03 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-12 12:24:03 -0500
+
+
+Started GET "/assets/d3.min.js?body=1" for 127.0.0.1 at 2014-04-12 12:24:03 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-12 12:24:03 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-12 12:24:03 -0500
+
+
+Started GET "/assets/navbar.js?body=1" for 127.0.0.1 at 2014-04-12 12:24:03 -0500
+
+
+Started GET "/assets/d3linegraph.js?body=1" for 127.0.0.1 at 2014-04-12 12:24:03 -0500
+
+
+Started GET "/assets/d3barchart.js?body=1" for 127.0.0.1 at 2014-04-12 12:24:03 -0500
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2014-04-12 12:24:03 -0500
+Processing by UsersController#retrieve_ind_user_results as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic' AND "responses"."user_id" = 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic edge' AND "responses"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'learning' AND "responses"."user_id" = 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort edge' AND "responses"."user_id" = 1
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort' AND "responses"."user_id" = 1[0m
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-04-12 12:31:59 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (5.2ms)
+  Rendered shared/_navbar.html.erb (0.5ms)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-12 12:31:59 -0500
+
+
+Started GET "/assets/d3.css?body=1" for 127.0.0.1 at 2014-04-12 12:31:59 -0500
+
+
+Started GET "/assets/navbar.css?body=1" for 127.0.0.1 at 2014-04-12 12:31:59 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-04-12 12:31:59 -0500
+
+
+Started GET "/assets/signup.css?body=1" for 127.0.0.1 at 2014-04-12 12:31:59 -0500
+
+
+Started GET "/assets/signin.css?body=1" for 127.0.0.1 at 2014-04-12 12:32:00 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-12 12:32:00 -0500
+
+
+Started GET "/assets/d3.min.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:00 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:00 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:00 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:00 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:00 -0500
+
+
+Started GET "/assets/navbar.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:00 -0500
+
+
+Started GET "/assets/d3linegraph.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:00 -0500
+
+
+Started GET "/assets/d3barchart.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:00 -0500
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2014-04-12 12:32:00 -0500
+Processing by UsersController#retrieve_ind_user_results as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic' AND "responses"."user_id" = 1
+  [1m[36m (4.1ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic edge' AND "responses"."user_id" = 1[0m
+  [1m[35m (6.9ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'learning' AND "responses"."user_id" = 1
+  [1m[36m (4.5ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort edge' AND "responses"."user_id" = 1[0m
+  [1m[35m (2.6ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort' AND "responses"."user_id" = 1
+Completed 200 OK in 39ms (Views: 0.3ms | ActiveRecord: 20.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-04-12 12:32:23 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (5.2ms)
+  Rendered shared/_navbar.html.erb (0.7ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/d3.css?body=1" for 127.0.0.1 at 2014-04-12 12:32:23 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-04-12 12:32:23 -0500
+
+
+Started GET "/assets/signin.css?body=1" for 127.0.0.1 at 2014-04-12 12:32:23 -0500
+
+
+Started GET "/assets/navbar.css?body=1" for 127.0.0.1 at 2014-04-12 12:32:23 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-12 12:32:23 -0500
+
+
+Started GET "/assets/signup.css?body=1" for 127.0.0.1 at 2014-04-12 12:32:23 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:23 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:23 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:23 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-12 12:32:23 -0500
+
+
+Started GET "/assets/navbar.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:23 -0500
+
+
+Started GET "/assets/d3.min.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:23 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:23 -0500
+
+
+Started GET "/assets/d3linegraph.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:23 -0500
+
+
+Started GET "/assets/d3barchart.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:23 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:23 -0500
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2014-04-12 12:32:23 -0500
+Processing by UsersController#retrieve_ind_user_results as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic' AND "responses"."user_id" = 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic edge' AND "responses"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'learning' AND "responses"."user_id" = 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort edge' AND "responses"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort' AND "responses"."user_id" = 1[0m
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-04-12 12:32:32 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (5.8ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+Completed 200 OK in 31ms (Views: 14.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/d3.css?body=1" for 127.0.0.1 at 2014-04-12 12:32:32 -0500
+
+
+Started GET "/assets/navbar.css?body=1" for 127.0.0.1 at 2014-04-12 12:32:32 -0500
+
+
+Started GET "/assets/signin.css?body=1" for 127.0.0.1 at 2014-04-12 12:32:32 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-12 12:32:32 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-04-12 12:32:32 -0500
+
+
+Started GET "/assets/signup.css?body=1" for 127.0.0.1 at 2014-04-12 12:32:32 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-12 12:32:32 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:32 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:32 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:32 -0500
+
+
+Started GET "/assets/d3.min.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:32 -0500
+
+
+Started GET "/assets/navbar.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:32 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:32 -0500
+
+
+Started GET "/assets/d3linegraph.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:32 -0500
+
+
+Started GET "/assets/d3barchart.js?body=1" for 127.0.0.1 at 2014-04-12 12:32:32 -0500
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2014-04-12 12:32:32 -0500
+Processing by UsersController#retrieve_ind_user_results as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic' AND "responses"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic edge' AND "responses"."user_id" = 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'learning' AND "responses"."user_id" = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort edge' AND "responses"."user_id" = 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort' AND "responses"."user_id" = 1
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-04-12 12:33:20 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (20.2ms)
+  Rendered shared/_navbar.html.erb (0.7ms)
+Completed 200 OK in 30ms (Views: 27.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:21 -0500
+
+
+Started GET "/assets/d3.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:21 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:21 -0500
+
+
+Started GET "/assets/signin.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:21 -0500
+
+
+Started GET "/assets/navbar.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:21 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:21 -0500
+
+
+Started GET "/assets/signup.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:21 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:21 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:21 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:21 -0500
+
+
+Started GET "/assets/d3.min.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:21 -0500
+
+
+Started GET "/assets/navbar.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:21 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:21 -0500
+
+
+Started GET "/assets/d3linegraph.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:21 -0500
+
+
+Started GET "/assets/d3barchart.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:21 -0500
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2014-04-12 12:33:21 -0500
+Processing by UsersController#retrieve_ind_user_results as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic' AND "responses"."user_id" = 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic edge' AND "responses"."user_id" = 1
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'learning' AND "responses"."user_id" = 1[0m
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort edge' AND "responses"."user_id" = 1
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort' AND "responses"."user_id" = 1[0m
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-04-12 12:33:27 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:27 -0500
+
+
+Started GET "/assets/d3.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:27 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:27 -0500
+
+
+Started GET "/assets/signup.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:27 -0500
+
+
+Started GET "/assets/signin.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:27 -0500
+
+
+Started GET "/assets/navbar.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:27 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:27 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:27 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:27 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:27 -0500
+
+
+Started GET "/assets/d3.min.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:27 -0500
+
+
+Started GET "/assets/navbar.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:27 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:27 -0500
+
+
+Started GET "/assets/d3linegraph.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:27 -0500
+
+
+Started GET "/assets/d3barchart.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:27 -0500
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2014-04-12 12:33:27 -0500
+Processing by UsersController#retrieve_ind_user_results as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic' AND "responses"."user_id" = 1
+  [1m[36m (2.3ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic edge' AND "responses"."user_id" = 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'learning' AND "responses"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort edge' AND "responses"."user_id" = 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort' AND "responses"."user_id" = 1
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-04-12 12:33:30 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/signup.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:30 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:30 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:30 -0500
+
+
+Started GET "/assets/navbar.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:30 -0500
+
+
+Started GET "/assets/d3.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:30 -0500
+
+
+Started GET "/assets/signin.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:30 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-12 12:33:30 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:30 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:30 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:30 -0500
+
+
+Started GET "/assets/d3.min.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:30 -0500
+
+
+Started GET "/assets/navbar.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:30 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:30 -0500
+
+
+Started GET "/assets/d3linegraph.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:30 -0500
+
+
+Started GET "/assets/d3barchart.js?body=1" for 127.0.0.1 at 2014-04-12 12:33:30 -0500
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2014-04-12 12:33:30 -0500
+Processing by UsersController#retrieve_ind_user_results as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic' AND "responses"."user_id" = 1[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'panic edge' AND "responses"."user_id" = 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'learning' AND "responses"."user_id" = 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort edge' AND "responses"."user_id" = 1
+  [1m[36m (2.3ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."answer" = 'comfort' AND "responses"."user_id" = 1[0m
+Completed 200 OK in 14ms (Views: 1.1ms | ActiveRecord: 4.9ms)
