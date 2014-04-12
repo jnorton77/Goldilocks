@@ -9,6 +9,30 @@
 <h3>comfort edge -- <%= Response.where(:answer => "comfort edge").count %></h3>
 <h3>comfort -- <%= Response.where(:answer => "comfort").count %></h3>
 
+<br><br>
+<h2 style="display:none; float:right; color:gray;" class="quotes">... a state of psychological stability and composure which is undisturbed by experience of or exposure to emotions, pain, or other phenomena that may cause others to lose the balance of their mind.</h2>
+<h2 style="display:none; float:right; color:gray;" class="quotes">... having an even mind</h2>
+<h2 style="display:none; float:right; color:gray;" class="quotes">... mental calmness, composure, and evenness of temper, esp. in a difficult situation.</h2>
+
+<script>
+(function() {
+
+    var quotes = $(".quotes");
+    var quoteIndex = -1;
+    
+    function showNextQuote() {
+        ++quoteIndex;
+        quotes.eq(quoteIndex % quotes.length)
+            .fadeIn(2000)
+            .delay(2000)
+            .fadeOut(2000, showNextQuote);
+    }
+    
+    showNextQuote();
+    
+})();
+</script>
+
 
 
 
