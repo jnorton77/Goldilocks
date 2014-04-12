@@ -1,41 +1,9 @@
-<canvas id="myChart" width="400" height="400"></canvas>
+<%= javascript_include_tag "d3linegraph", "d3barchart" %>
 
-<script>
-  var ctx = document.getElementById("myChart").getContext("2d");
+<%= javascript_tag do %>
+  userId = <%= @user.id %>
+<% end %>
 
-  $(document).ready(function() {
-    $.ajax({
-      url: "/users/<%=@user.id%>/results",
-      type: "get"
-    }).done(function(data) {
-      var data = [
-    {
-      color:"#F38630",
-      value: data.panic
-    },
-    {
-      color:"#F38630",
-      value: data.panic_edge
-    },
-    {
-      color:"#F38630",
-      value: data.comfort
-    },
-    {
-      color:"#F38630",
-      value: data.comfort_edge
-    },
-    {
-      color:"#F38630",
-      value: data.comfort
-    }
-  ]
-    new Chart(ctx).Pie(data);
-    }).fail(function(data) {
-
-    }).always(function(data) {
-
-    })
-  })
-
-  </script>
+<%= button_tag "Cumulative Mood" %>
+<%= button_tag "Mood by Time" %>
+<%= button_tag "Mood vs. Others" %>
