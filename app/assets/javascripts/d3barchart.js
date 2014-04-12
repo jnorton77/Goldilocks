@@ -15,9 +15,21 @@ Array.prototype.min = function() {
 var xScale = []
 var yScale = []
 
-var lineData = [ {"x":1, "y":5}, {"x":300, "y":190},
-                {"x":530, "y":250}, {"x":800, "y":440},
-                {"x":920, "y":50}, {"x":1100, "y":800}];
+var responseData = [{"answer": "comfort", "created_at":"2014-03-30 06:17:25"},
+          {"answer": "panic", "created_at":"2014-04-08 15:51:58"},
+          {"answer": "panic edge", "created_at":"2014-04-11 16:54:18"},
+          {"answer": "comfort edge", "created_at":"2014-03-31 07:59:18"},
+          {"answer": "comfort", "created_at":"2014-04-08 07:07:31"},
+          {"answer": "learning", "created_at":"2014-04-08 08:59:05"},
+          {"answer": "comfort", "created_at":"2014-04-04 12:44:28"},
+          {"answer": "panic edge", "created_at":"2014-04-11 04:42:04"},
+          {"answer": "learning", "created_at":"2014-04-07 05:25:39"},
+          {"answer": "comfort", "created_at":"2014-03-30 02:09:09"},
+          {"answer": "panic edge", "created_at":"2014-04-08 23:28:33"},
+          {"answer": "comfort", "created_at":"2014-04-10 17:29:58"},
+          {"answer": "learning", "created_at":"2014-04-11 04:42:04"},
+          {"answer": "comfort", "created_at":"2014-03-30 09:04:12"},
+];
 
 var jsonRectangles = [
                       { "x": 10, "y": 10, "height": 800, "width":200, "color" : "green" },
