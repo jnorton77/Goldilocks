@@ -1,25 +1,25 @@
-var lineData = [ {"x":1, "y": 5}, {"x":20, "y": 20},
-                {"x":40, "y": 10}, {"x":60, "y": 40},
-                {"x":80, "y": 5}, {"x":600, "y": 600}];
+// Here's a basic time scale
+// var margin = {top: 100, right: 100, bottom: 100, left: 100},
+//     width = 1360 - margin.left - margin.right,
+//     height = 900 - margin.top - margin.bottom;
 
-var lineFunction = d3.svg.line()
-                          .x(function(d) {
-                            console.log(d.x + "x")
-                            return d.x; })
-                          .y(function(d) {
-                            console.log(d.y + "y")
-                            return d.y; })
-                          .interpolate("linear");
+// // need to declare params for .day(start, stop)
+// var x = d3.time.scale()
+//       .domain([new Date, new Date])
+//       .nice(d3.time.day())
+//       .range([0, width]);
+
+// var svg = d3.select("body").append("svg")
+//     .attr("width", width + margin.left + margin.right)
+//     .attr("height", height + margin.top + margin.bottom)
+//   .append("g")
+//     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// svg.append("g")
+//     .attr("class", "x axis")
+//     .call(d3.svg.axis().scale(x).orient("bottom"));
 
 $(document).ready(function() {
-  var svgContainerDeux = d3.select("body").append("svg")
-                    .attr("id", "linegraph")
-
-  svgContainerDeux.append("path")
-    .attr("d", lineFunction(lineData))
-    .attr("stroke-width", 2)
-    .attr("stroke", "blue")
-    .attr("fill", "none");
 
   $.ajax({
     url: "/users/"+userId+"/results",
@@ -33,4 +33,5 @@ $(document).ready(function() {
   })
   .fail(function(data) {})
   .always(function(data) {})
+
 });
