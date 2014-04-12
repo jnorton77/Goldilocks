@@ -1,9 +1,10 @@
-<%= javascript_include_tag "d3linegraph", "d3barchart" %>
+<%= javascript_include_tag "user_show.js" %>
 
 <%= javascript_tag do %>
   userId = <%= @user.id %>
 <% end %>
 
-<%= button_tag "Cumulative Mood" %>
-<%= button_tag "Mood by Time" %>
-<%= button_tag "Mood vs. Others" %>
+<div id="json_results"></div>
+
+<%= button_tag "retrieve_all_user_results", id: "retrieve_all" %>
+<%= button_tag "retrieve_ind_user_results", id: "retrieve_for_user" %>
