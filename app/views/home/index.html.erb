@@ -1,9 +1,9 @@
 <style>
   body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin: auto;
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  /*margin: auto;*/
   /*width: 960px;*/
-  padding-top: 20px;
+  /*padding-top: 20px;*/
   /*background-color: #012647;*/
 }
 
@@ -106,8 +106,14 @@ path.color1 {
 <%= link_to "Go to My Profile", controller: "users", action: "show", id: current_user.id %>
 <% end %>
 
+<div id="index_buttons">
+     <a href="/results/today"><%= button_tag "today", id: "today" %></a><!--
+  --><a href="/results/yesterday"><%= button_tag "yesterday", id: "yesterday" %></a><!--
+  --><a href="/results/thisWeek"><%= button_tag "this week", id: "week" %></a>
+</div>
+
 <h1>Dev Bootcamp <span style="color: green;">LEARNING ZONE</span></h1>
-<div id="donut" margin="0 auto" data-donut=<%= (Response.where(answer:"learning").count.to_f / Response.all.count) * 100 %>>
+<div id="donut" margin="0 auto" data-donut=<%= @learning.to_f / @all_responses * 100 %>>
 </div>
 
 <!-- <svg class="test-svg"></svg> -->
@@ -119,6 +125,14 @@ path.color1 {
 <h2 style="display:none; float:right; color:gray;" class="quotes">... a state of psychological stability and composure which is undisturbed by experience of or exposure to emotions, pain, or other phenomena that may cause others to lose the balance of their mind.</h2>
 <h2 style="display:none; float:right; color:gray;" class="quotes">... having an even mind</h2>
 <h2 style="display:none; float:right; color:gray;" class="quotes">... mental calmness, composure, and evenness of temper, esp. in a difficult situation.</h2>
+
+<%= javascript_tag do %>
+  panic = <%= @panic %>
+  panicEdge = <%= @panic_edge %>
+  learning = <%= @learning %>
+  comfortEdge = <%= @comfort_edge %>
+  comfort = <%= @comfort %>
+<% end %>
 
 <script>
 
@@ -154,11 +168,11 @@ HorizontalBarGraph.prototype.draw = function() {
 };
 
 var graph = new HorizontalBarGraph('#my-graph', [
-  {label: "Panic", value: <%=Response.where(:answer => "panic").count%>, color: "red" },
-  {label: "Panic Edge", value: <%=Response.where(:answer => "panic edge").count%>,  color: "orange" },
-  {label: "Learning", value: <%=Response.where(:answer => "learning").count%>,  color: "green" },
-  {label: "Comfort Edge", value: <%=Response.where(:answer => "comfort edge").count%>,  color: "orange" },
-  {label: "Comfort", value: <%=Response.where(:answer => "comfort").count%>,  color: "red" }
+  {label: "Panic", value: panic, color: "red" },
+  {label: "Panic Edge", value: panicEdge,  color: "orange" },
+  {label: "Learning", value: learning,  color: "green" },
+  {label: "Comfort Edge", value: comfortEdge,  color: "orange" },
+  {label: "Comfort", value: comfort,  color: "red" }
 
 
 ]);
@@ -201,7 +215,7 @@ angular.module('myApp', []).
 
 
   svg.selectAll('rect') 
-    .data([<%= Response.where(answer: "panic").count %>, <%= Response.where(answer: "panic edge").count %>, <%= Response.where(answer: "learning").count %>, <%= Response.where(answer: "comfort edge").count %>, <%= Response.where(answer: "comfort").count %>])
+    .data([panic, panicEdge, learning, comfortEdge, comfort])
     .transition()
     .delay(1000)
     .duration(3000)

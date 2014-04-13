@@ -19,7 +19,7 @@
 Question.destroy_all
 Response.destroy_all
 
-rand(8000..10000).times { Response.create(answer: rand(1..5),
+1000.times { Response.create(answer: ["panic", "panic edge", "learning", "comfort edge", "comfort"].sample,
 								                        question_id: 1,
                                         user_id: rand(1..151),
                                         created_at: Date.today - rand(14).day + rand(24).hour + rand(60).minute + rand(60).second)

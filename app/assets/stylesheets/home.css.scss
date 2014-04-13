@@ -9,8 +9,26 @@
 }
 
 .container {
-  width: 900px;
+  width: 1300px;
   margin: 80px auto;
+}
+
+#index_buttons {
+  width: 500px;
+  margin: 0 auto;
+}
+
+#index_buttons button {
+  width: 160px;
+}
+
+#today {
+  border-right: none;
+  border-left: 5px solid black;
+}
+
+#yesterday {
+  border-left: 5px solid black;
 }
 
 #buttons {
