@@ -1,66 +1,88 @@
-<script src="d3helper.js"></script>
+var chartData = {
+                    responseData: [],
+                    calendarData: []
+};
 
-function responseData() {
-  this.times = []
-  this.answers = []
+var responses = [
+                  {"answer": "comfort", "created_at":"2014-03-30 06:17:25"},
+                  {"answer": "panic", "created_at":"2014-03-30 15:51:58"},
+                  {"answer": "panic edge", "created_at":"2014-03-30 16:54:18"},
+                  {"answer": "comfort edge", "created_at":"2014-03-30 07:59:18"},
+                  {"answer": "comfort", "created_at":"2014-03-30 07:07:31"},
+                  {"answer": "learning", "created_at":"2014-03-30 08:59:05"},
+                  {"answer": "comfort", "created_at":"2014-03-30 12:44:28"},
+                  {"answer": "panic edge", "created_at":"2014-03-30 04:42:04"},
+                  {"answer": "learning", "created_at":"2014-03-30 05:25:39"},
+                  {"answer": "comfort", "created_at":"2014-03-30 02:09:09"},
+                  {"answer": "panic edge", "created_at":"2014-03-30 23:28:33"},
+                  {"answer": "comfort", "created_at":"2014-03-30 17:29:58"},
+                  {"answer": "learning", "created_at":"2014-03-30 04:42:04"},
+                  {"answer": "comfort", "created_at":"2014-03-30 09:04:12"}
+                ];
+
+// pushes in times
+for(var k in responses) {
+                        chartData.responseData.push({
+                                                    "x" : responses[k].created_at,
+                                                    "y" : responses[k].answer
+                                                    })
 }
 
-var responses = [{"answer": "comfort", "created_at":"2014-03-30 06:17:25"},
-          {"answer": "panic", "created_at":"2014-03-30 15:51:58"},
-          {"answer": "panic edge", "created_at":"2014-03-30 16:54:18"},
-          {"answer": "comfort edge", "created_at":"2014-03-30 07:59:18"},
-          {"answer": "comfort", "created_at":"2014-03-30 07:07:31"},
-          {"answer": "learning", "created_at":"2014-03-30 08:59:05"},
-          {"answer": "comfort", "created_at":"2014-03-30 12:44:28"},
-          {"answer": "panic edge", "created_at":"2014-03-30 04:42:04"},
-          {"answer": "learning", "created_at":"2014-03-30 05:25:39"},
-          {"answer": "comfort", "created_at":"2014-03-30 02:09:09"},
-          {"answer": "panic edge", "created_at":"2014-03-30 23:28:33"},
-          {"answer": "comfort", "created_at":"2014-03-30 17:29:58"},
-          {"answer": "learning", "created_at":"2014-03-30 04:42:04"},
-          {"answer": "comfort", "created_at":"2014-03-30 09:04:12"},
-];
-
-
-function extractAttribute(element, index, destinationArray, attributeName) { destinationArray.push(element.attributeName) }
-
-// responses.forEach(extractAttribute(element, responseData().times, created_at)
-// responses.forEach(extractAttribute(element, responseData().answers, answer);
-
+// pushes in responses
+for(var k in responses) {
+                        chartData.responseData.push({
+                                                    "x" : responses[k].created_at,
+                                                    "y" : responses[k].answer
+                                                    })
+}
 
 var calendarEvents = [
-                      { "title": "EE", "begin": "2014-03-30 010:00:00", "end":"2014-03-30 11:30:00" },
-                      { "title": "Coding", "begin": "2014-03-30 13:00:00", "end": "2014-03-30 17:00:00" },
-                      { "title": "Lunch", "begin": "2014-03-30 11:30:00", "end": "2014-03-30 13:00:00" }];
+                      { "title": "EE", "beginTime": "2014-03-30 010:00:00", "duration":"1.5" },
+                      { "title": "Coding", "beginTime": "2014-03-30 13:00:00", "duration": "4.0" },
+                      { "title": "Lunch", "beginTime": "2014-03-30 11:30:00", "duration": "1.5" }
+                    ];
 
-// This is for the actual responses (the times of the first and last response), but we're probably not going to use this ...
-// var max_x = responseData().times.max();
-// var min_x = responseData().times.min();
-var max_x = 1000
-var min_x = 0
+var date = {
+                "date" : "2014-03-30"
+                }
+
+for(var k in calendarEvents) {
+  console.log(chartData.calendarData.push({
+    "x" : calendarEvents[k].beginTime,
+    "x2" : calendarEvents[k].endTime,
+    "label" : calendarEvents[k].title
+  })
+)}
+
+for(var k in calendarEvents) {
+console.log(chartData.calendarData.push({
+  "x1" : calendarEvents[k].beginTime,
+  "x2" : calendarEvents[k].endTime,
+  "label" : calendarEvents[k].title
+  })
+)}
 var width = 1180
-
-
-// var max_y = yScale.max();
-// var min_y = yScale.min();
 var height = 980
-var padding = 10;
 
-var x = d3.scale.linear()
-                .domain([min_x, max_x]);
-// var y = d3.scale.linear()
-//                 .range([0, max_y]);
+var visualizationSpace = d3.select("body").append("svg:svg")
+                                          .attr("width",width)
+                                          .attr("height",height);
 
-var xAxisLabel = d3.svg.axis()
-                  .scale(x)
-                  .orient("bottom")
-                  .ticks(6)
-                  .tickFormat(d3.time.format('%a %d'));
+var rect = visualizationSpace.selectAll("rect")
+                              .data([1,4,3,2,5])
+                              .enter()
+                              .append("svg:rect");
 
-// var yAxisLabel = d3.svg.axis()
-//                   .scale(y)
-//                   .orient("left")
-//                   .ticks(6);
+var xAxisDay = d3.scale.ordinal()
+                    .range([0, width])
+                    .domain(["", "3AM", "6AM", "9AM", "12PM", "3PM", "6PM", "9PM", ""])
+                    .rangePoints([0, width])
+                    .orient("bottom")
+
+var yAxis = d3.scale.ordinal()
+                    .domain(["Comfort", "Comfort Edge", "Learning", "Panic Edge", "Panic"])
+                    .rangePoints([0, height])
+                    .orient("left")
 
 $(document).ready(function() {
 
@@ -99,26 +121,12 @@ $(document).ready(function() {
         .attr("stroke", "blue")
         .attr("fill", "none");
 
-// svg.append("g")
-//     .attr("class", "y-axis")
-//     .attr("transform", "translate(" + padding + ",0)")
-//     .call(yAxis);
+svg.append("g")
+    .attr("class", "y-axis")
+    .attr("transform", "translate(" + padding + ",0)")
+    .call(yAxis);
 
 svg.append("g")
     .attr("class", "x-axis")
     .attr("transform", "translate(0," + (height - padding) + ")")
-    .call(xAxis);
-
-  $.ajax({
-    url: "/users/"+userId+"/results",
-    type: "get"
-  })
-  .done(function(data) {
-    // console.log(data)
-    $.each(data, function(index, value) {
-    console.log(value);
-    });
-  })
-  .fail(function(data) {})
-  .always(function(data) {})
-});
+    .call(xAxisDay);
