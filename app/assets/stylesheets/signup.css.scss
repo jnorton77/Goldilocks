@@ -21,15 +21,14 @@
 }
 
 .signup-container {
-  top: 120px;
-  border-radius: 4px;
-  text-shadow: 1px 1px 0 #0D1C2A;
-  box-shadow: 1px 1px 3px #666;
+  display: none;
+  position: fixed;
+  right: 0px;
+  top: 80px;
   padding: 10px 15px;
-  background: #104E8B;
-  color: #0BA250;
+  background: black;
+  color: white;
   margin: 0 auto;
-  width: 20%;
 }
 
 .new_user, .signin-box > a {
@@ -44,15 +43,12 @@
   display: block;
   border: none;
   font-weight: bold;
-  background: #499AEA;
-  border-radius: 4px;
-  color: #fff;
-  text-shadow: 1px 1px 0px #0D1C2A;
-  box-shadow: 1px 1px 1px #333;
-  width: 80%;
-  margin: 4px 0;
+  background: white;
+  font-size: 18px;
+  color: black;
+  width: 100%;
+  margin: 10px 0;
   padding: 3px 0;
-  margin-left: 10%;
 }
 
 .signin-box > a {
@@ -75,8 +71,8 @@
 #user_last_name,
 #user_geolocation {
   display: block;
-  margin: 6px 0;
-  box-shadow: 1px 1px 4px #666;
+  margin: 10px auto;
+  font-size: 18px;
   padding: 5px;
   border: none;
 }

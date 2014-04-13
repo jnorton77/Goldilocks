@@ -10,15 +10,11 @@
   <% end %>
 
   <div class="signin-box">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= render partial: "shared/signin" %>
+  </div>
 
-      <%= f.email_field :email, :placeholder => "Email" %>
-
-      <%= f.password_field :password, :placeholder => "Password" %>
-
-      <%= f.submit "Sign in", :class => "sign-in-button" %>
-
-    <% end %>
+  <div class="signup-container">
+    <%= render partial: "shared/signup" %>
   </div>
 
   <% if notice %>
@@ -32,7 +28,12 @@
 <script>
   $("#navbar-login").on("click", function(e) {
     event.preventDefault();
-    // alert('hi')
+    $(".signup-container").hide();
     $(".signin-box").toggle();
+  });
+  $("#navbar-register").on("click", function(e) {
+    event.preventDefault();
+    $(".signin-box").hide();
+    $(".signup-container").toggle();
   });
 </script>

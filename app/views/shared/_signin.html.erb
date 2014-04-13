@@ -1,4 +1,4 @@
-<div class="signin-box">
+
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
     <%= f.email_field :email, :placeholder => "Email" %>
@@ -8,4 +8,4 @@
     <%= f.submit "Sign in", :class => "sign-in-button" %>
 
   <% end %>
-</div>
+
