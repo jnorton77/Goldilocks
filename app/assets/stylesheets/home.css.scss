@@ -9,8 +9,30 @@
 }
 
 .container {
-  margin: 120px auto;
   width: 900px;
+  margin: 80px auto;
+}
+
+#buttons {
+    width: 660px;
+    margin: 0 auto;
+  }
+button {
+  padding: 30px;
+  background: none;
+  border: 5px solid black;
+  border-top: none;
+  font-size: 20px;
+}
+button:last-child {
+  border-left: none;
+}
+button:hover {
+  background: black;
+  color: white;
+}
+button:focus {
+  outline:none;
 }
 
 /*.quotes {display: none;}​*/
@@ -38,7 +60,5 @@ input[type=checkbox] {
 }
 
 input[type=submit]:hover {
-  background: #104E8B;
-  color: #4E8B10;
   cursor: pointer;
 }
