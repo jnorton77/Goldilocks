@@ -2,5 +2,9 @@
   userId = <%= @user.id %>
 <% end %>
 
-<%= button_tag "retrieve_all_user_results", id: "retrieve_all" %>
-<%= button_tag "retrieve_ind_user_results", id: "retrieve_for_user" %>
+<div id="json_results"></div>
+
+<div id="buttons">
+	<%= button_tag "retrieve_all_user_results", id: "retrieve_all" %>
+  <%= button_tag "retrieve_ind_user_results", id: "retrieve_for_user" %>
+</div>

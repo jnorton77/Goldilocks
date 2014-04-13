@@ -12,6 +12,7 @@ Goldilocks::Application.routes.draw do
 
 
   match '/users/m/:id/responses' => 'responses#mobile_create', via: :post
+
   # match '/request' => 'responses#mobile_create', via: :get
 
   # The priority is based upon order of creation: first created -> highest priority.
