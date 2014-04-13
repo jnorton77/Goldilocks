@@ -19,14 +19,14 @@
 Question.destroy_all
 Response.destroy_all
 
-rand(8000..10000).times { Response.create(answer: rand(1..5),
+rand(1_000).times { Response.create(answer: rand(1..5),
 								                        question_id: 1,
-                                        user_id: rand(1..151),
+                                        user_id: rand(1..11),
                                         created_at: Date.today - rand(14).day + rand(24).hour + rand(60).minute + rand(60).second)
 
                       }
 Question.create(
-                content: Faker::Lorem.sentence(7),
+                content: "How would you characterize your frame of mind?",
                 created_at: "2014-03-01 07:55:25",
                 updated_at: "2014-03-01 07:55:25"
                 )
@@ -41,13 +41,22 @@ User.create(
             updated_at: "2014-03-01 07:54:25"
             )
 
-100.times { User.create(
+10.times { User.create(
                       first_name: Faker::Name.first_name,
                       last_name: Faker::Name.last_name,
                       email: Faker::Internet.email,
-                      password: "molestiae",
-                      password_confirmation: "molestiae",
+                      password: "marydear",
+                      password_confirmation: "marydear",
                       created_at: "2014-03-01 07:54:25",
                       updated_at: "2014-03-01 07:54:25"
                       )
           }
+
+1_000.times { HeartRate.create(
+                      user_id: rand(1..11),
+                      bpm: rand(48..210),
+                      recorded_at: Date.today - rand(14).day + rand(24).hour + rand(60).minute + rand(60).second,
+                      created_at: "2014-04-13 07:54:25",
+                      updated_at: "2014-04-13 07:54:25"
+                      )
+              }

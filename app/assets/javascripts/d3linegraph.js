@@ -18,20 +18,3 @@
 // svg.append("g")
 //     .attr("class", "x axis")
 //     .call(d3.svg.axis().scale(x).orient("bottom"));
-
-$(document).ready(function() {
-
-  $.ajax({
-    url: "/users/"+userId+"/results",
-    type: "get"
-  })
-  .done(function(data) {
-    // console.log(data)
-    $.each(data, function(index, value) {
-    console.log(value);
-    });
-  })
-  .fail(function(data) {})
-  .always(function(data) {})
-
-});
