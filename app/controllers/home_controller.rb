@@ -3,30 +3,30 @@ class HomeController < ApplicationController
   def index
     @user = current_user
     @all_responses = Response.all.count
-    @panic = Response.where(answer: 1).count
-    @panic_edge = Response.where(answer: 2).count
-    @learning = Response.where(answer: 3).count
-    @comfort_edge = Response.where(answer: 4).count
-    @comfort = Response.where(answer: 5).count
+    @panic = 0
+    @panic_edge = 0
+    @learning = 0
+    @comfort_edge = 0
+    @comfort = 0
   end
 
   def today
-  	@all_responses = Response.where(created_at: (Date.yesterday..Date.today)).count
-  	@panic = Response.where(answer: 1, created_at: (Date.yesterday..Date.today)).count
-    @panic_edge = Response.where(answer: 2, created_at: (Date.yesterday..Date.today)).count
-    @learning = Response.where(answer: 3, created_at: (Date.yesterday..Date.today)).count
-    @comfort_edge = Response.where(answer: 4, created_at: (Date.yesterday..Date.today)).count
-    @comfort = Response.where(answer: 5, created_at: (Date.yesterday..Date.today)).count
+  	@all_responses = Response.where(created_at: (Date.today-1.day..Date.today)).count
+  	@panic = Response.where(answer: 1, created_at: (Date.today-1.day..Date.today)).count
+    @panic_edge = Response.where(answer: 2, created_at: (Date.today-1.day..Date.today)).count
+    @learning = Response.where(answer: 3, created_at: (Date.today-1.day..Date.today)).count
+    @comfort_edge = Response.where(answer: 4, created_at: (Date.today-1.day..Date.today)).count
+    @comfort = Response.where(answer: 5, created_at: (Date.today-1.day..Date.today)).count
   	render 'index'
   end
 
   def yesterday
-  	@all_responses = Response.where(created_at: (Date.yesterday-1.day..Date.yesterday)).count
-  	@panic = Response.where(answer: 1, created_at: (Date.yesterday-1.day..Date.yesterday)).count
-    @panic_edge = Response.where(answer: 2, created_at: (Date.yesterday-1.day..Date.yesterday)).count
-    @learning = Response.where(answer: 3, created_at: (Date.yesterday-1.day..Date.yesterday)).count
-    @comfort_edge = Response.where(answer: 4, created_at: (Date.yesterday-1.day..Date.yesterday)).count
-    @comfort = Response.where(answer: 5, created_at: (Date.yesterday-1.day..Date.yesterday)).count
+  	@all_responses = Response.where(created_at: (Date.yesterday-2.day..Date.yesterday-1.day)).count
+  	@panic = Response.where(answer: 1, created_at: (Date.yesterday-2.day..Date.yesterday-1.day)).count
+    @panic_edge = Response.where(answer: 2, created_at: (Date.yesterday-2.day..Date.yesterday-1.day)).count
+    @learning = Response.where(answer: 3, created_at: (Date.yesterday-2.day..Date.yesterday-1.day)).count
+    @comfort_edge = Response.where(answer: 4, created_at: (Date.yesterday-2.day..Date.yesterday-1.day)).count
+    @comfort = Response.where(answer: 5, created_at: (Date.yesterday-2.day..Date.yesterday-1.day)).count
   	render 'index'
   end
 
