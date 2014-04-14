@@ -43,8 +43,6 @@ $(document).ready(function(){
     })
     .done(function(data) {
       console.log(data)
-      barChart = new BARChart
-      barChart.parseLinePoints(data("created_at", "answer"))
       console.log("-----");
       console.log(barChart.rectangles);
       console.log("-----");
