@@ -7,17 +7,17 @@ var margin = {top: 20, right: 20, bottom: 20, left:20},
 var svgWindow = d3.select("svg").attr("width", svgWidth)
                                 .attr("height", svgHeight)
 
+var xScale = ,
+    yScale = ;
+
 var xAxisDay = d3.scale.ordinal()
-                    .domain([0, 24])
+                    .domain(xScale)
                     .range([0, svgWidth])
                     // .ticks(5)      #this is reading as undefined ... must be appended some other way.
                     .rangePoints([0, svgWidth])
                     // .orient("bottom")
 
 var yAxis = d3.scale.ordinal()
-                    .domain([1, 5])
+                    .domain(yScale)
                     .rangePoints([0, svgHeight])
                     // .orient("left")
-
-var lineChart = new LineChart,
-    barChart =  new BarChart;

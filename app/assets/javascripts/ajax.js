@@ -25,6 +25,7 @@ $(document).ready(function(){
       console.log(data);
 
       console.log("-----");
+      lineChart = new LineChart
       lineChart.render();
 
       console.log(l.points);
@@ -42,9 +43,10 @@ $(document).ready(function(){
     })
     .done(function(data) {
       console.log(data)
+      barChart = new BARChart
       barChart.parseLinePoints(data("created_at", "answer"))
       console.log("-----");
-      console.log(lineChart.points);
+      console.log(barChart.rectangles);
       console.log("-----");
       })
     .fail(function(data) {
