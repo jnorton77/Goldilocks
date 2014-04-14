@@ -62,7 +62,7 @@ path.color1 {
 
 .horizontal-bar-graph-label {
   display: table-cell;
-  border-right: 1px solid silver; 
+  border-right: 1px solid silver;
   text-align: right;
   padding: 4px 10px 4px 0;
   vertical-align: baseline;
@@ -135,7 +135,7 @@ path.color1 {
 
     var quotes = $(".quotes");
     var quoteIndex = -1;
-    
+
     function showNextQuote() {
         ++quoteIndex;
         quotes.eq(quoteIndex % quotes.length)
@@ -143,9 +143,9 @@ path.color1 {
             .delay(2000)
             .fadeOut(2000, showNextQuote);
     }
-    
+
     showNextQuote();
-    
+
 })();
 
 HorizontalBarGraph = function(el, series) {
@@ -208,7 +208,7 @@ angular.module('myApp', []).
              .transition.duration([1000])
              .style("width", function(d) { return d - 150 + "%"; })
              .text(function(d) { return d + "%"; });
-         } 
+         }
       };
    });
 
@@ -226,7 +226,7 @@ angular.module('myApp', []).
     .style('fill', '#f44441');
 
 
-  svg.selectAll('rect') 
+  svg.selectAll('rect')
     .data([panic, panicEdge, learning, comfortEdge, comfort])
     .transition()
     .delay(1000)
