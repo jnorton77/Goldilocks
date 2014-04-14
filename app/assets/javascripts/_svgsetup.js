@@ -7,9 +7,6 @@ var margin = {top: 20, right: 20, bottom: 20, left:20},
 var svgWindow = d3.select("svg").attr("width", svgWidth)
                                 .attr("height", svgHeight)
 
-var xScale = ,
-    yScale = ;
-
 var xAxisDay = d3.scale.ordinal()
                     .domain(xScale)
                     .range([0, svgWidth])
