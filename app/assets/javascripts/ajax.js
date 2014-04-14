@@ -42,7 +42,7 @@ $(document).ready(function(){
     })
     .done(function(data) {
       console.log(data)
-      barChart.parseLinePoints(data("created_at", "answer"))
+      barChart.parseEventRectangle(data("created_at", "answer"))
       console.log("-----");
       console.log(lineChart.points);
       console.log("-----");
