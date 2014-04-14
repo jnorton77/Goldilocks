@@ -19,6 +19,7 @@
 Question.destroy_all
 Response.destroy_all
 
+
 rand(1_000).times { Response.create(answer: rand(1..5),
 								                        question_id: 1,
                                         user_id: rand(1..11),
