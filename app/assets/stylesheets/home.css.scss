@@ -8,14 +8,32 @@
   font-family: 'Allerta', sans-serif;
 }
 
+.logo {
+  padding: 0;
+}
+
 .container {
   width: 1300px;
   margin: 80px auto;
 }
 
+.quotes {
+  margin-top: 100px;
+  width: 650px;
+}
+
+h1 {
+  padding-top: 40px;
+}
+
+#donut {
+  padding-top: 50px;
+  float: left;
+}
+
 #index_buttons {
   width: 500px;
-  margin: 0 auto;
+  float: right;
 }
 
 #index_buttons button {

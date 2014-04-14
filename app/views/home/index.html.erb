@@ -67,6 +67,7 @@ path.color1 {
   padding: 4px 10px 4px 0;
   vertical-align: baseline;
   white-space: nowrap;
+  font-size: 30px;
 }
 
 .horizontal-bar-graph-value {
@@ -108,19 +109,17 @@ path.color1 {
   --><a href="/results/thisWeek"><%= button_tag "this week", id: "week" %></a>
 </div>
 
-<h1>Dev Bootcamp <span style="color: green;">LEARNING ZONE</span></h1>
-<div id="donut" margin="0 auto" data-donut=<%= @learning.to_f / @all_responses * 100 %>>
+<h1>Boots in the <span style="color: green;">LEARNING ZONE</span></h1>
+<div id="donut" data-donut=<%= @learning.to_f / @all_responses * 100 %>>
 </div>
-
-<!-- <svg class="test-svg"></svg> -->
-
-<div class="horizontal-bar-graph" id="my-graph"></div>
-
 
 <br><br>
 <h2 style="display:none; float:right; color:gray;" class="quotes">... a state of psychological stability and composure which is undisturbed by experience of or exposure to emotions, pain, or other phenomena that may cause others to lose the balance of their mind.</h2>
 <h2 style="display:none; float:right; color:gray;" class="quotes">... having an even mind</h2>
 <h2 style="display:none; float:right; color:gray;" class="quotes">... mental calmness, composure, and evenness of temper, esp. in a difficult situation.</h2>
+
+<div class="horizontal-bar-graph" id="my-graph"></div>
+
 
 <%= javascript_tag do %>
   panic = <%= @panic %>
@@ -166,7 +165,7 @@ HorizontalBarGraph.prototype.draw = function() {
 var graph = new HorizontalBarGraph('#my-graph', [
   {label: "Panic", value: panic, color: "red" },
   {label: "Panic Edge", value: panicEdge,  color: "orange" },
-  {label: "Learning", value: learning,  color: "green" },
+  {label: "*Learning", value: learning,  color: "green" },
   {label: "Comfort Edge", value: comfortEdge,  color: "orange" },
   {label: "Comfort", value: comfort,  color: "red" }
 
