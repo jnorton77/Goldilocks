@@ -88,10 +88,10 @@ $(document).ready(function() {
                               .attr("height", height)
                               .attr("id", "barchart");
 
-  var rectangles = svg.selectAll("rect")
-                              .data(chartData.calendarData)
-                              .enter()
-                              .append("rect");
+  // var rectangles = svg.selectAll("rect")
+  //                             .data(chartData.calendarData)
+  //                             .enter()
+  //                             .append("rect");
 
   rectangles
     .attr("x", function(d) { return d.x1; })

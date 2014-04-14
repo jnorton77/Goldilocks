@@ -20,7 +20,7 @@ Question.destroy_all
 Response.destroy_all
 
 
-rand(1_000).times { Response.create(answer: rand(1..5),
+2000.times { Response.create(answer: rand(1..5),
 								                        question_id: 1,
                                         user_id: rand(1..11),
                                         created_at: Date.today - rand(14).day + rand(24).hour + rand(60).minute + rand(60).second)
