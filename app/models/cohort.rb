@@ -1,5 +1,4 @@
-class HeartRate < ActiveRecord::Base
+class Cohort < ActiveRecord::Base
   belongs_to :user
   has_many :users
-
 end
