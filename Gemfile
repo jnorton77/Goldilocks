@@ -50,3 +50,4 @@ gem 'unicorn'
 
 gem 'rails_12factor', group: :production
 # ruby "2.1.1"
+gem 'coveralls', require: false

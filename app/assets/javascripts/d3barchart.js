@@ -30,5 +30,3 @@ BarChart.prototype.render = function (data) {
     .duration(1250)
     .style('opacity', .3);
 }
-
-var barChart =  new BarChart;

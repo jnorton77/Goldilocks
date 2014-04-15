@@ -13,4 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require helper
+//= require underscore
+//= require _d3.min
+//= require d3linechart
+//= require retrieve-user-line
