@@ -8,6 +8,7 @@ class HomeController < ApplicationController
     @learning = 0
     @comfort_edge = 0
     @comfort = 0
+    render 'index'
   end
 
   def today
