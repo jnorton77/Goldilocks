@@ -4,6 +4,7 @@ class CreateResponses < ActiveRecord::Migration
       t.integer :answer
       t.integer :question_id
       t.string :email
+      # t.string :cohort
 
       t.timestamps
     end
