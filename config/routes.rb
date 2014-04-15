@@ -5,8 +5,8 @@ Goldilocks::Application.routes.draw do
   get 'results/today' => 'home#today'
   get 'results/yesterday' => 'home#yesterday'
   get 'results/thisWeek' => 'home#this_week'
-  get 'users/index/results' => 'users#retrieve_all_user_results'
-  get 'users/:id/results' => 'users#retrieve_ind_user_results'
+  get 'users/index/results' => 'users#retrieve_all_results'
+  get 'users/:id/results' => 'users#retrieve_user_results'
   delete :sessions, to: redirect('/home/logout')
 
   resources :users do

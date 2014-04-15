@@ -1,23 +1,11 @@
-var margin = {top: 20, right: 20, bottom: 20, left:20},
-    width = 1000,
-    height = 1240,
-    svgWidth = width - margin.left - margin.right,
-    svgHeight = height - margin.top - margin.bottom;
-
-var svgWindow = d3.select("svg").attr("width", svgWidth)
-                                .attr("height", svgHeight)
-
-var xScale = ,
-    yScale = ;
-
-var xAxisDay = d3.scale.ordinal()
-                    .domain(xScale)
-                    .range([0, svgWidth])
+var xAxisDay = d3.scale.linear()
+                    .domain([0, 24])
+                    .range([0, 960])
                     // .ticks(5)      #this is reading as undefined ... must be appended some other way.
-                    .rangePoints([0, svgWidth])
+                    .rangePoints([0, 960])
                     // .orient("bottom")
 
-var yAxis = d3.scale.ordinal()
-                    .domain(yScale)
-                    .rangePoints([0, svgHeight])
+var yAxis = d3.scale.linear()
+                    .domain([1, 5])
+                    .rangePoints([0, 1200])
                     // .orient("left")

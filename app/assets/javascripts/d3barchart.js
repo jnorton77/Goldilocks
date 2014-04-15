@@ -31,12 +31,12 @@ BarChart.prototype.render = function (data) {
     .style('opacity', .3);
 }
 
-rectangles
-  .attr("x", function(d) { return d.x1; })
-  .attr("y", function(d) { return 40; })
-  .attr("height", function(d) { return svgHeight; })
-  .attr("width", function(d) { return 80; })
-  .style("fill", function(d) { return "blue"; })
-  .transition()
-  .duration(1250)
-  .style('opacity', .3);
+// rectangles
+//   .attr("x", function(d) { return d.x1; })
+//   .attr("y", function(d) { return 40; })
+//   .attr("height", function(d) { return svgHeight; })
+//   .attr("width", function(d) { return 80; })
+//   .style("fill", function(d) { return "blue"; })
+//   .transition()
+//   .duration(1250)
+//   .style('opacity', .3);
