@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20140413200333) do
   enable_extension "plpgsql"
 
   create_table "heart_rates", force: true do |t|
-    t.integer  "user_id"
+    t.string   "user_id"
     t.string   "bpm"
-    t.datetime "recorded_at"
+    t.string   "recorded_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
