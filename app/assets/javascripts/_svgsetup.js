@@ -1,6 +1,6 @@
 var margin = {top: 20, right: 20, bottom: 20, left:20},
-    width = 1000,
-    height = 1240,
+    width = 1240,
+    height = 1000,
     svgWidth = width - margin.left - margin.right,
     svgHeight = height - margin.top - margin.bottom;
 
@@ -18,6 +18,3 @@ var yAxis = d3.scale.ordinal()
                     .domain([1, 5])
                     .rangePoints([0, svgHeight])
                     // .orient("left")
-
-var lineChart = new LineChart,
-    barChart =  new BarChart;

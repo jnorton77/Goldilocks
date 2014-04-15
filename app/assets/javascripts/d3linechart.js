@@ -1,4 +1,8 @@
 var lineChart = new LineChart;
+var d3PolyLine = d3.svg.line()
+                .x(function(d){return d.x;})
+                .y(function(d){return d.y;})
+                .interpolate("linear");
 
 function LineChart() {
   this.points = [];
@@ -17,21 +21,26 @@ LineChart.prototype.parseLinePoints = function(array, xAttribute, yAttribute) {
   }
 }
 
-LineChart.prototype.render = function() {
-  lineChart.parseLinePoints(data, "created_at", "answer");
+LineChart.prototype.d3PolyLine = function() {
+  d3.svg.line()
+        .x(function(d){return d.x;})
+        .y(function(d){return d.y;})
+        .interpolate("linear");
 }
 
-// Specify the function for generating path data
-var d3PolyLine = d3.svg.line()
-                .x(function(d){return d.x;})
-                .y(function(d){return d.y;})
-                .interpolate("linear");
-
-svgWindow.append("svg:path")
-          .attr("d", d3PolyLine(pathinfo))
+LineChart.prototype.render = function() {
+  this.parseLinePoints(data, "created_at", "answer"); // data is undefined ...
+  svgWindow.append("svg:path")
+          .attr("d", d3PolyLine(this.points))
           .style("stroke-width", 2)
           .style("stroke", "steelblue")
           .style("fill", "none");
+}
+
+// Specify the function for generating path data
+
+
+
 
 
 // LineChart.prototype.loadPoint = function(point) {      // for manually adding 1 point
