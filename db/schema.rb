@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20140413200333) do
 
   create_table "heart_rates", force: true do |t|
     t.integer  "user_id"
-    t.integer  "bpm"
+    t.string   "bpm"
     t.datetime "recorded_at"
     t.datetime "created_at"
     t.datetime "updated_at"
