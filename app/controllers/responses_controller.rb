@@ -8,7 +8,7 @@ class ResponsesController < ApplicationController
   end
 
   def mobile_create
-    @mobile_response = Response.create(answer: params[:answer], email: params[:email])
+    @mobile_response = Response.create(answer: params[:answer], email: params[:email], cohort: params[:cohort])
     redirect_to root_path
   end
 end
