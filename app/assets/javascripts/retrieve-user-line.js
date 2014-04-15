@@ -1,8 +1,6 @@
-var drawLine = function(data){
+var renderLineChart = function(parsedResults){
   var lineChart = new LineChart();
-
-  lineChart.render(data);
-
+  lineChart.render(parsedResults);
 }
 
 $(document).ready(function(){
@@ -12,11 +10,9 @@ $(document).ready(function(){
       type: "get"
     })
     .done(function(data) {
-      var parsedResults = parseResponses(data);
-      console.log(parsedResults);
-      var sortedResults = _.sortBy(parsedResults, function(object){return object.x})
-      console.log(sortedResults)
-      drawLine(sortedResults);
+      var parsedResults = parseResponses(data)
+
+      renderLineChart(parsedResults)
     })
     .fail(function(data) {
     })

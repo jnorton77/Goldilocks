@@ -1,50 +1,79 @@
 var LineChart = function() {
-  this.points = [];
-  this.initialize();
+    this.initialize();
 }
 
 LineChart.prototype.initialize = function(){
-  d3.select("body").append("svg")
-                    .attr("width", 960)
-                    .attr("height", 1200)
-                    .attr("id", "linechart");
 }
 
-LineChart.prototype.d3PolyLine = function() {
-  d3.svg.line()
-        .x(function(d){return d.x;})
-        .y(function(d){return d.y;})
-        .interpolate("linear");
+LineChart.prototype.render = function(parsedResults){
+    var margin = {top: 20, right: 20, bottom: 50, left: 50}
+    var width = 960 - margin.left - margin.right
+    var height = 500 - margin.top - margin.bottom
+    var x_domain = d3.extent(parsedResults, function (d) { return d.x })
+    var y_domain = d3.extent(parsedResults, function (d) { return d.y })
+      console.log(x_domain)
+      console.log(y_domain)
+
+    var svg = d3.select("body").append("svg")
+                      .attr("width", width + margin.left + margin.right)
+                      .attr("height", height + margin.top + margin.bottom)
+                      .append("g")
+                      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var d3PolyLine = d3.svg.line()
+                          .x(function(data){
+                            console.log(data.x)
+                            var xat = data.x
+                            return xScale(xat);
+                          })
+                          .y(function(data){
+                            console.log(data.y)
+                            var yat = data.y
+                            return yScale(yat);
+                          })
+                          .interpolate("linear");
+
+    var xScale = d3.time.scale()
+                          .domain(x_domain).nice()
+                          .range([0, width]);
+
+    var yScale = d3.scale.linear()
+                          .domain(y_domain).nice()
+                          .range([height, 0]);
+
+    var xAxis = d3.svg.axis()
+                      .ticks(12)
+                      .orient("bottom")
+                      .scale(xScale);
+
+    var yAxis = d3.svg.axis()
+                      .ticks(5)
+                      .orient("left")
+                      .scale(yScale);
+
+    var svg = d3.select("svg")
+
+  svg.append("g")
+      .attr("class", "x-axis")
+      .attr("transform", "translate(0," + svg.attr("height") + ")")
+      .style("stroke-width", 2)
+      .call(xAxis);
+
+  svg.append("g")
+        .attr("class", "y-axis")
+        .style("stroke-width", 2)
+        .call(yAxis)
+      .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("x", -20)
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text("Responses");
+
+  svg.append("svg:path")
+      .attr("d", d3PolyLine(parsedResults))
+      .style("stroke-width", 2)
+      .style("stroke", "steelblue")
+      .style("fill", "none");
 }
-
-// Specify the function for generating path data
-
-
-var xScale = d3.scale.linear()
-                  .domain([0, 24])
-                  .range([0, 1200]);
-
-var yScale = d3.scale.linear()
-                  .domain([1, 5])
-                  .range([0, 960]);
-
-
-LineChart.prototype.render = function(data) {
-  var d3PolyLine = d3.svg.line()
-                        .x(function(data){
-                          var xat = data.x
-                          return xScale(xat);
-                        })
-                        .y(function(data){
-                          var yat = data.y
-                          return yScale(yat);
-                        })
-                        .interpolate("linear");
-
-  d3.select("svg").append("svg:path")
-            .attr("d", d3PolyLine(data))
-            .style("stroke-width", 2)
-            .style("stroke", "steelblue")
-            .style("fill", "none");
-}
-

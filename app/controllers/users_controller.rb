@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def retrieve_user_results
-    # @user = User.find(params[:id])
+    @user = User.find(params[:id])
     render json: Response.where(:user_id => params[:id])
   end
 
