@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require helper
 //= require underscore
 //= require _d3.min
