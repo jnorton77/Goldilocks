@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require angular.min
 //= require jquery
 //= require jquery_ujs
 //= require helper
@@ -18,3 +19,4 @@
 //= require d3linechart
 //= require d3eventbars
 //= require retrieve-user-info
+//= require home

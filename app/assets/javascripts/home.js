@@ -2,18 +2,18 @@
 
 $(function() {
 
-//     var quotes = $(".quotes");
-//     var quoteIndex = -1;
-    
-//     function showNextQuote() {
-//         ++quoteIndex;
-//         quotes.eq(quoteIndex % quotes.length)
-//             .fadeIn(2000)
-//             .delay(2000)
-//             .fadeOut(2000, showNextQuote);
-//     }
-    
-//     showNextQuote();
+    var quotes = $(".quotes");
+    var quoteIndex = -1;
+
+    function showNextQuote() {
+        ++quoteIndex;
+        quotes.eq(quoteIndex % quotes.length)
+            .fadeIn(2000)
+            .delay(2000)
+            .fadeOut(2000, showNextQuote);
+    }
+
+    showNextQuote();
 
     HorizontalBarGraph = function(el, series) {
   this.el = d3.select(el);
@@ -52,8 +52,6 @@ var graph = new HorizontalBarGraph('#my-graph', [
   {label: "*Learning", value: learning,  color: "green" },
   {label: "Comfort Edge", value: comfortEdge,  color: "orange" },
   {label: "Comfort", value: comfort,  color: "red" }
-
-
 ]);
 graph.draw();
 
@@ -95,6 +93,7 @@ angular.module('myApp', []).
 
   svg.selectAll('rect')
     .data([panic, panicEdge, learning, comfortEdge, comfort])
+    .attr("class", "yolo")
     .transition()
     .delay(1000)
     .duration(3000)
@@ -181,7 +180,7 @@ function drawDonutChart(element, percent, width, height, text_y) {
 function calcPercent(percent) {
   return [percent, 100-percent];
 };
-    
+
 });
 
 // bar chart

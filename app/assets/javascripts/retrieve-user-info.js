@@ -27,20 +27,12 @@ $(document).ready(function(){
     .done(function(data) {
       $("svg").remove();
       var parsedResults = parseResponses(data)
-      renderLineChart(parsedResults)
+      renderLineChart(parsedResults, "ordinal")
     })
     .fail(function(data) {
     })
     .always(function(data) {
     });
-  });
-
-   $("#show_events").change(function(){
-    if ($this)is(':checked'){
-      parseEventRectangles()
-    } else {
-           // need to exit the rectangles
-    }
   });
 
   $("#retrieve_user_hr_line").on("click", function(){
@@ -58,6 +50,21 @@ $(document).ready(function(){
     .always(function(data) {
     });
   });
+
+  //  $("#show_events").on("click", function(){
+  //   if(($this)is(':checked')){
+  //     $.ajax({
+  //       url: "/users/"+userId+"/results",
+  //       type: "get"
+  //     })
+  //     .done(function(data){
+  //       parseEventRectangles()
+  //     })
+
+  //   } else {
+  //          // need to exit the rectangles
+  //   }
+  // });
 
     $("#retrieve_user_vert_bar").on("click", function(){
     $.ajax({
