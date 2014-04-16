@@ -1,14 +1,7 @@
-var LineChart = function() {
-    this.initialize();
-}
-
-LineChart.prototype.initialize = function(){
-}
-
-LineChart.prototype.render = function(parsedResults){
-    var margin = {top: 0, right: 0, bottom: 0, left: 0}
-    var width = 1480 - margin.left - margin.right
-    var height = 900 - margin.top - margin.bottom
+LineChart.prototype.renderHR = function(parsedResults){
+    var margin = {top: 20, right: 20, bottom: 50, left: 50}
+    var width = 960 - margin.left - margin.right
+    var height = 500 - margin.top - margin.bottom
     var x_domain = d3.extent(parsedResults, function (d) { return d.x })
     var y_domain = d3.extent(parsedResults, function (d) { return d.y })
 
@@ -69,19 +62,9 @@ LineChart.prototype.render = function(parsedResults){
         .style("text-anchor", "end")
         .text("Responses");
 
-  var pathTween = function() {
-      var interpolate = d3.scale.quantile()
-                                .domain([0,1])
-                                .range(d3.range(1, parsedResults.length + 1));
-      return function(t) {
-          return d3PolyLine(parsedResults.slice(0, interpolate(t)));
-      }
-  };
-
-  var path = svg.append("svg:path")
-                .attr("class", "line")
-                .attr("d", d3PolyLine(parsedResults))
-                .transition()
-                  .duration(2500)
-                  .attrTween('d', pathTween);
+  svg.append("svg:path")
+      .attr("d", d3PolyLine(parsedResults))
+      .style("stroke-width", 2)
+      .style("stroke", "steelblue")
+      .style("fill", "none");
 }
