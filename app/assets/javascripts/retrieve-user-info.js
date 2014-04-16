@@ -10,7 +10,7 @@ var renderOrdinalLineChart = function(ordinalResults){
 
 var renderHRChart = function(hrData){
   var lineChart = new LineChart();
-  lineChart.renderHR(hrData);
+  lineChart.render(hrData);
 }
 
 var renderBarChart = function(parsedResults){

@@ -4,9 +4,6 @@ var BarChart = function BarChart() {
 }
 
 BarChart.prototype.render = function(parsedResults){
-  var margin = {top: 20, right: 20, bottom: 50, left: 50}
-  var width = 960 - margin.left - margin.right
-  var height = 500 - margin.top - margin.bottom
   var x_domain = d3.extent(parsedResults, function (d) { return d.x })
   var y_domain = d3.extent(parsedResults, function (d) { return d.y })
     console.log(x_domain)

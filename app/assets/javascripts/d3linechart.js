@@ -54,7 +54,6 @@ LineChart.prototype.render = function(parsedResults){
   svg.append("g")
       .attr("class", "x-axis")
       .attr("transform", "translate(0," + svg.attr("height") + ")")
-      .style("stroke-width", 2)
       .call(xAxis);
 
   svg.append("g")

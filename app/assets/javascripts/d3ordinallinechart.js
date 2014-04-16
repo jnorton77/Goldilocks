@@ -46,10 +46,6 @@ LineChart.prototype.renderOrdinal = function(ordinalResults){
       .attr("class", "x-axis")
       .attr("transform", "translate(0,"+svg.attr("height")+")")
       .call(xAxis)
-    .append("text")
-      .attr("class", "x-axis-title")
-      .attr("dy", ".71em")
-      .text("Time");
 
   svg.append("g")
         .attr("class", "y-axis")
