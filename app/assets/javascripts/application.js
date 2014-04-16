@@ -17,5 +17,4 @@
 //= require _d3.min
 //= require d3linechart
 //= require d3eventbars
-//= require d3ordinallinechart
 //= require retrieve-user-info

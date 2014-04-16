@@ -59,6 +59,9 @@ LineChart.prototype.render = function(parsedResults){
     var yAxis = d3.svg.axis()
                       .ticks(5)
                       .orient("left")
+                      .tickFormat(function (d) {
+                       return ["So dope", "Comfort", "Comfort-Learning", "Learning", "Panic-Learning", "Panic"][d]
+                      })
                       .scale(yScale);
 
     var svg = d3.select("svg")

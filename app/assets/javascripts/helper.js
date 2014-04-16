@@ -10,18 +10,6 @@ var parseResponses = function(responses) {
   return (_.sortBy(holder, function(object){return object.x}));
 }
 
-var ordinalParseResponses = function(responses) {
-  var holder = [];
-  for(var i=0; i<responses.length; i++) {
-    var date = new Date(responses[i]["created_at"])
-    holder.push({
-      "x" : date,
-      "answer" : ["Comfort Zone", "Comfort-Learning Zone", "Learning Zone", "Panic-Learning Zone", "Panic Zone"][i%5]
-    })
-  }
-  return (_.sortBy(holder, function(object){return object.x}));
-}
-
 var parseHRates = function(heartRates) {
   var holder = [];
   for(var i=0; i<heartRates.length; i++) {
@@ -29,6 +17,21 @@ var parseHRates = function(heartRates) {
     holder.push({
       "x" : date,
       "y" : heartRates[i]["bpm"]
+    })
+  }
+  console.log(_.sortBy(holder, function(object){return object.x}))
+  return (_.sortBy(holder, function(object){return object.x}));
+}
+
+var parseEventRectangles = function(events) {
+  var holder = [];
+  for(var i=0; i<events.length; i++) {
+    var beginTime = new Date(event[i]["beginTime"])
+    var endTime = new Date(event)[i]["endTime"]
+    holder.push({
+      "x" : date,
+      "width" : beginTime - endTime
+      "y" : 900
     })
   }
   console.log(_.sortBy(holder, function(object){return object.x}))

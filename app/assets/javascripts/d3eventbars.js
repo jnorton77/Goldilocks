@@ -17,9 +17,9 @@ BarChart.prototype.render = function(parsedResults){
   rectanglesEnter.append("rect");
 
   rectanglesUpdate
-    .attr("x", function(d) { return d.x1; })
+    .attr("x", function(d) { return d.x; })
     .attr("y", function(d) { return 40; })
-    .attr("height", function(d) { return svgHeight; })
+    .attr("height", function(d) { return 900; })
     .attr("width", function(d) { return 80; })
     .style("fill", function(d) { return "blue"; })
     .transition()
