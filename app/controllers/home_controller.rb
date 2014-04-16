@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def index
     @user = current_user
-    @all_responses = Response.all.count
+    @all_responses = Response.all.count == 0 ? 1 : Response.all.count
     @panic = 0
     @panic_edge = 0
     @learning = 0
@@ -12,7 +12,7 @@ class HomeController < ApplicationController
   end
 
   def today
-  	@all_responses = Response.where(created_at: (Time.now.to_datetime - 1.day..Time.now.to_datetime)).count
+  	@all_responses = Response.all.count == 0 ? 1 : Response.where(created_at: (Time.now.to_datetime - 1.day..Time.now.to_datetime)).count
   	@panic = Response.where(answer: 1, created_at: (Time.now.to_datetime - 1.day..Time.now.to_datetime)).count
     @panic_edge = Response.where(answer: 2, created_at: (Time.now.to_datetime - 1.day..Time.now.to_datetime)).count
     @learning = Response.where(answer: 3, created_at: (Time.now.to_datetime - 1.day..Time.now.to_datetime)).count
@@ -22,7 +22,7 @@ class HomeController < ApplicationController
   end
 
   def yesterday
-  	@all_responses = Response.where(created_at: (Time.now.to_datetime - 2.day..Time.now.to_datetime - 1.day)).count
+  	@all_responses = Response.all.count == 0 ? 1 : Response.where(created_at: (Time.now.to_datetime - 2.day..Time.now.to_datetime - 1.day)).count
   	@panic = Response.where(answer: 1, created_at: (Time.now.to_datetime - 2.day..Time.now.to_datetime - 1.day)).count
     @panic_edge = Response.where(answer: 2, created_at: (Time.now.to_datetime - 2.day..Time.now.to_datetime - 1.day)).count
     @learning = Response.where(answer: 3, created_at: (Time.now.to_datetime - 2.day..Time.now.to_datetime - 1.day)).count
@@ -32,7 +32,7 @@ class HomeController < ApplicationController
   end
 
   def this_week
-  	@all_responses = Response.where(created_at: (Date.yesterday-7.day..Time.now.to_datetime)).count
+  	@all_responses = Response.all.count == 0 ? 1 : Response.where(created_at: (Date.yesterday-7.day..Time.now.to_datetime)).count
   	@panic = Response.where(answer: 1, created_at: (Date.yesterday-7.day..Time.now.to_datetime)).count
     @panic_edge = Response.where(answer: 2, created_at: (Date.yesterday-7.day..Time.now.to_datetime)).count
     @learning = Response.where(answer: 3, created_at: (Date.yesterday-7.day..Time.now.to_datetime)).count
