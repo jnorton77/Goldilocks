@@ -8,22 +8,126 @@
   font-family: 'Allerta', sans-serif;
 }
 
+/*DONUT PERCENT GRAPHIC*/
+
+text {
+  font-family: "RamaGothicM-Heavy",Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,"Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black",sans-serif;
+  font-size: 7rem;
+  font-weight: 400;
+  line-height: 16rem;
+  fill: green;
+}
+
+#donut {
+  width: 20rem;
+  height: 20rem;
+  margin: 0 auto;
+}
+
+path.color0 {
+  fill: green;
+}
+
+path.color1 {
+  fill: lightgreen;
+}
+
+.chart {
+    background: #eee;
+    padding: 3px;
+}
+
+.chart div {
+  width: 0;
+  transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+}
+
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 5px;
+  color: white;
+  box-shadow: 2px 2px 2px #666;
+}
+
+.horizontal-bar-graph {
+  display: table;
+  width: 50%;
+  float: right;
+  margin: 100px 50px 0px 0px;
+}
+
+.horizontal-bar-graph-segment {
+  display: table-row;
+}
+
+.horizontal-bar-graph-label {
+  display: table-cell;
+  border-right: 1px solid silver;
+  text-align: right;
+  padding: 4px 10px 4px 0;
+  vertical-align: baseline;
+  white-space: nowrap;
+  font-size: 20px;
+}
+
+.horizontal-bar-graph-value {
+  display: table-cell;
+  padding: 3px 0;
+  vertical-align: baseline;
+  width: 100%;
+}
+
+.horizontal-bar-graph-value-bar {
+  background: silver;
+  /*@include box-sizing(padding-box);*/
+  padding: 4px 4px 3px;
+  height: 1em;
+  text-align: right;
+  color: white;
+  overflow: visible;
+  display: inline-block;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+}
+
+.horizontal-bar-graph-segment:first-child {
+  .horizontal-bar-graph-label { padding-top: 12px; }
+  .horizontal-bar-graph-value { padding-top: 11px; }
+}
+.horizontal-bar-graph-segment:last-child {
+  .horizontal-bar-graph-label { padding-bottom: 12px; }
+  .horizontal-bar-graph-value { padding-bottom: 11px; }
+}
+
 .logo {
   padding: 0;
 }
 
 .container {
-  width: 1300px;
+  width: 1000px;
   margin: 80px auto;
 }
 
+#quote {
+  clear: both;
+  width: 600px;
+  position: relative;
+  margin-top: 450px;
+}
+
 .quotes {
-  margin-top: 100px;
-  width: 650px;
+  color: gray;
+  font-size: 16px;
 }
 
 h1 {
-  padding-top: 40px;
+  padding-top: 20px;
+  font-size: 24px;
 }
 
 #donut {
@@ -32,12 +136,8 @@ h1 {
 }
 
 #index_buttons {
-  width: 500px;
+  /*width: 350px;*/
   float: right;
-}
-
-#index_buttons button {
-  width: 160px;
 }
 
 #today {
@@ -49,12 +149,12 @@ h1 {
   border-left: 5px solid black;
 }
 
-#buttons {
+/*#buttons {
     width: 660px;
     margin: 0 auto;
-  }
+  }*/
 button {
-  padding: 30px;
+  padding: 10px 50px;
   background: none;
   border: 5px solid black;
   border-top: none;

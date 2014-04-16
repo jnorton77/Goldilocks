@@ -6,7 +6,19 @@
   <%= button_tag "User Individual Line Chart", id: "retrieve_user_line" %>
   <%= button_tag "User HR Line Chart", id: "retrieve_user_hr_line" %>
 </div>
+
 <div id="events-show-button">
   <%= check_box_tag "events", id: "show_events" %>
   <%= label_tag(:event_on, "Show Events") %>
 </div>
+
+<ul class="my_responses">
+  <% responses = {1 => "Panic",
+                  2 => "Panic Edge",
+                  3 => "Learning",
+                  4 => "Comfort Edge",
+                  5 => "Comfort"} %>
+  <% @responses.each do |response| %>
+  	<li>You said <%= responses[response.answer] %> <%= distance_of_time_in_words(Time.now, response.created_at) %> ago.</li>
+  <% end %>
+</ul>

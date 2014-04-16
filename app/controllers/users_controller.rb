@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @responses = Response.where(email: @user.email)
   end
 
   def retrieve_user_responses
