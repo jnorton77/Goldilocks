@@ -1,18 +1,17 @@
-var renderLineChart = function(parsedResults){
-  var lineChart = new LineChart();
-  lineChart.render(parsedResults);
+var renderBarChart = function(parsedResults){
+  var barChart = new BarChart();
+  barChart.render(parsedResults);
 }
 
 $(document).ready(function(){
-  $("#retrieve_user_line").on("click", function(){
+  $("#retrieve_user_vert_bar").on("click", function(){
     $.ajax({
       url: "/users/"+userId+"/results",
       type: "get"
     })
     .done(function(data) {
       var parsedResults = parseResponses(data)
-
-      renderLineChart(parsedResults)
+      renderbarChart(parsedResults)
     })
     .fail(function(data) {
     })
@@ -21,5 +20,3 @@ $(document).ready(function(){
   });
 
 });
-
-

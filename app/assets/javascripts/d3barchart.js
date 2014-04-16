@@ -1,22 +1,35 @@
-var rect = svgWindow.selectAll("rect")
-                              .data([1,4,3,2,5])
-                              .enter()
-                              .append("svg:rect");
-
-function BarChart() {
-  this.svg = d3.select("body").append(svgWindow)
-                            .attr("id", "barchart");
+var BarChart = function BarChart() {
+  var barChart = new BarChart();
+  barChart.render(data);
 }
 
+$(document).ready(function(){
+  $("#retrieve_user_line").on("click", function(){
+    $.ajax({
+      url: "/users/"+userId+"/results",
+      type: "get"
+    })
+    .done(function(data) {
+      var parsedResults = parseResponses(data);
+      var sortedResults = _.sortBy(parsedResults, function(object){return object.x})
+      console.log(sortedResults);
+      renderLineChart(sortedResults);
+    })
+    .fail(function(data) {
+    })
+    .always(function(data) {
+    });
+  });
+
+});
+
+
 BarChart.prototype.render = function (data) {
-  //xScale? yScale?
 
-  var rectanglesUpdate = this.svg.selectAll("rect")
-                                  .data(data);
-
-
-  var rectanglesEnter = rectanglesUpdate.enter();
-  var rectanglesExit = rectanglesUpdate.exit();
+  var rectanglesUpdate = svg.selectAll("rect")
+                            .data(sortedResults);
+                            .enter()
+                            .append("svg:rect");
 
   rectanglesEnter.append("rect");
 
