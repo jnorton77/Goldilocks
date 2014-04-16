@@ -31,5 +31,6 @@ var parseHRates = function(heartRates) {
       "y" : heartRates[i]["bpm"]
     })
   }
+  console.log(_.sortBy(holder, function(object){return object.x}))
   return (_.sortBy(holder, function(object){return object.x}));
 }
