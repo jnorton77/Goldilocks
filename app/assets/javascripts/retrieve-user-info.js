@@ -32,7 +32,7 @@ $(document).ready(function(){
 
   $("#retrieve_user_ord_line").on("click", function(){
     $.ajax({
-      url: "/users/"+userId+"/results",
+      url: "/users/"+userId+"/responses",
       type: "get"
     })
     .done(function(data) {
@@ -48,7 +48,7 @@ $(document).ready(function(){
 
   $("#retrieve_user_hr_line").on("click", function(){
     $.ajax({
-      url: "/users/"+userId+"/results",
+      url: "/users/"+userId+"/heartrates",
       type: "get"
     })
     .done(function(data) {
