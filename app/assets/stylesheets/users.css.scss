@@ -1,3 +1,15 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.my_responses {
+	margin-top: 100px;
+}
+
+.my_responses li {
+	list-style: none;
+}
+
+.my_responses li:nth-child(even) {
+	background-color: gray;
+}
