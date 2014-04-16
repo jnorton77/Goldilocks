@@ -11,13 +11,13 @@
 <div id="personal_data">
   <h3 style="float: right; color:red;">Average Heartrate: <span><b><%= @avg_heart_rate %></b></span></h3>
   <ul class="my_responses">
-    <% responses = {1 => "Panic",
-                    2 => "Panic Edge",
-                    3 => "Learning",
-                    4 => "Comfort Edge",
-                    5 => "Comfort"} %>
+    <% responses = {1 => ["Panic", "red"],
+                    2 => ["Panic Edge", "orange"],
+                    3 => ["Learning", "green"],
+                    4 => ["Comfort Edge", "orange"],
+                    5 => ["Comfort", "red"]} %>
     <% @responses.each do |response| %>
-    	<li>You said <%= responses[response.answer] %> <%= distance_of_time_in_words(Time.now, response.created_at) %> ago.</li>
+    	<li>You said <span style="color: <%= responses[response.answer][1] %>"><%= responses[response.answer][0] %></span> <%= distance_of_time_in_words(Time.now, response.created_at) %> ago.</li>
     <% end %>
   </ul>
 </div>
