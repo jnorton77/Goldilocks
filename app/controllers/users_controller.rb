@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @responses = Response.where(email: @user.email)
+    beats = HeartRate.where(email: @user.email)
+    @avg_heart_rate = beats.inject(0) { |sum, beat| sum += beat.bpm.to_i }.to_f / beats.count
   end
 
   def retrieve_user_responses
