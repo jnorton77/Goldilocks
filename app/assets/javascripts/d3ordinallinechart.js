@@ -29,14 +29,12 @@ LineChart.prototype.renderOrdinal = function(ordinalResults){
                       .orient("left")
                       .scale(yScale);
 
-
     var d3PolyLine = d3.svg.line()
                             .x(function(data){
                               var xat = data.x
                               return xScale(xat);
                             })
                             .y(function(data){
-                              console.log(data)
                               var yat = data.answer
                               return yScale(yat);
                             })
