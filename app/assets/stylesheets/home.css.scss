@@ -19,8 +19,8 @@ text {
 }
 
 #donut {
-  width: 29rem;
-  height: 29rem;
+  width: 20rem;
+  height: 20rem;
   margin: 0 auto;
 }
 
@@ -56,7 +56,9 @@ path.color1 {
 
 .horizontal-bar-graph {
   display: table;
-  width: 100%;
+  width: 50%;
+  float: right;
+  margin: 100px 50px 0px 0px;
 }
 
 .horizontal-bar-graph-segment {
@@ -70,7 +72,7 @@ path.color1 {
   padding: 4px 10px 4px 0;
   vertical-align: baseline;
   white-space: nowrap;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .horizontal-bar-graph-value {
@@ -107,20 +109,25 @@ path.color1 {
 }
 
 .container {
-  width: 1300px;
+  width: 1000px;
   margin: 80px auto;
 }
 
+#quote {
+  clear: both;
+  width: 600px;
+  position: relative;
+  margin-top: 450px;
+}
+
 .quotes {
-  margin-top: 100px;
-  width: 650px;
-  float: right;
   color: gray;
-  display: none;
+  font-size: 16px;
 }
 
 h1 {
-  padding-top: 40px;
+  padding-top: 20px;
+  font-size: 24px;
 }
 
 #donut {
@@ -129,12 +136,8 @@ h1 {
 }
 
 #index_buttons {
-  width: 500px;
+  /*width: 350px;*/
   float: right;
-}
-
-#index_buttons button {
-  width: 160px;
 }
 
 #today {
@@ -146,12 +149,12 @@ h1 {
   border-left: 5px solid black;
 }
 
-#buttons {
+/*#buttons {
     width: 660px;
     margin: 0 auto;
-  }
+  }*/
 button {
-  padding: 30px;
+  padding: 10px 50px;
   background: none;
   border: 5px solid black;
   border-top: none;
