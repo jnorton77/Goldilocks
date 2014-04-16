@@ -10,11 +10,15 @@
 <div id="donut" data-donut=<%= @learning.to_f / @all_responses * 100 %>>
 </div>
 
-<h2 class="quotes">... a state of psychological stability and composure which is undisturbed by experience of or exposure to emotions, pain, or other phenomena that may cause others to lose the balance of their mind.</h2>
-<h2 class="quotes">... having an even mind</h2>
-<h2 class="quotes">... mental calmness, composure, and evenness of temper, esp. in a difficult situation.</h2>
-
 <div class="horizontal-bar-graph" id="my-graph"></div>
+
+<div id="quote">
+	<h2 class="quotes">e·qua·nim·i·ty<br>... a state of psychological stability and composure which is undisturbed by experience of or exposure to emotions, pain, or other phenomena that may cause others to lose the balance of their mind.</h2>
+</div>
+<!-- <h2 class="quotes">... having an even mind</h2> -->
+<!-- <h2 class="quotes">... mental calmness, composure, and evenness of temper, esp. in a difficult situation.</h2> -->
+
+
 
 <%= javascript_tag do %>
   panic = <%= @panic %>
@@ -23,6 +27,19 @@
   comfortEdge = <%= @comfort_edge %>
   comfort = <%= @comfort %>
 <% end %>
+
+
+<!-- // $(function () {
+// 	var panic = <%= @panic %>;
+//   	var panicEdge = <%= @panic_edge %>;
+//   	var learning = <%= @learning %>;
+//   	var comfortEdge = <%= @comfort_edge %>;
+//   	var comfort = <%= @comfort %>;
+// 	var myThing = new MyThing("#my-thing-container");
+
+// 	myThing.render([panic, panicEdge, learning, comfortEdge...]);
+// }); -->
+
 
 
 
