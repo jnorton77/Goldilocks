@@ -7,3 +7,9 @@
   <%= button_tag "User Ordinal Line Chart", id: "retrieve_user_ord_line" %>
   <%= button_tag "User HR Line Chart", id: "retrieve_user_hr_line" %>
 </div>
+<div id="events-show-button">
+  <%= radio_button_tag(:event, "show") %>
+  <%= label_tag(:event_on, "Show Events") %>
+  <%= radio_button_tag(:event, "hide") %>
+  <%= label_tag(:event_on, "Hide Events") %>
+</div>
