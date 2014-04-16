@@ -13,6 +13,11 @@ var renderHRChart = function(hrData){
   lineChart.renderHR(hrData);
 }
 
+var renderBarChart = function(parsedResults){
+  var barChart = new BarChart();
+  barChart.render(parsedResults);
+}
+
 $(document).ready(function(){
   $("#retrieve_user_line").on("click", function(){
     $.ajax({
@@ -32,7 +37,7 @@ $(document).ready(function(){
 
   $("#retrieve_user_ord_line").on("click", function(){
     $.ajax({
-      url: "/users/"+userId+"/responses",
+      url: "/users/"+userId+"/results",
       type: "get"
     })
     .done(function(data) {
@@ -55,6 +60,21 @@ $(document).ready(function(){
       $("svg").remove();
       var hrData = parseHRates(data)
       renderHRChart(hrData)
+    })
+    .fail(function(data) {
+    })
+    .always(function(data) {
+    });
+  });
+
+    $("#retrieve_user_vert_bar").on("click", function(){
+    $.ajax({
+      url: "/users/"+userId+"/results",
+      type: "get"
+    })
+    .done(function(data) {
+      var parsedResults = parseResponses(data)
+      renderbarChart(parsedResults)
     })
     .fail(function(data) {
     })
