@@ -39,6 +39,18 @@ LineChart.prototype.render = function(parsedResults){
                           .domain(y_domain).nice()
                           .range([height, 0]);
 
+    // var plotPoints = d3.svg.selectAll("circle")
+    //                   .data(parsedResults)
+    //                   .enter()
+    //                   .append("circle")
+    //                   .attr("cx", function(d) {
+    //                     return xScale(d["x"]);
+    //                   })
+    //                   .attr("cy", function(d){
+    //                     return yScale(d["y"]);
+    //                   })
+    //                   .attr("r", 2);
+
     var xAxis = d3.svg.axis()
                       .ticks(12)
                       .orient("bottom")
@@ -83,4 +95,16 @@ LineChart.prototype.render = function(parsedResults){
                 .transition()
                   .duration(2500)
                   .attrTween('d', pathTween);
+
+  d3.svg.selectAll("circle")
+                      .data(parsedResults)
+                      .enter()
+                      .append("circle")
+                      .attr("cx", function(d) {
+                        return xScale(d["x"]);
+                      })
+                      .attr("cy", function(d){
+                        return yScale(d["y"]);
+                      })
+                      .attr("r", 10);
 }

@@ -1,24 +1,24 @@
-var renderLineChart = function(parsedResults){
-  var lineChart = new LineChart();
-  lineChart.render(parsedResults);
-}
-
-var renderOrdinalLineChart = function(ordinalResults){
-  var lineChart = new LineChart();
-  lineChart.renderOrdinal(ordinalResults);
-}
-
-var renderHRChart = function(hrData){
-  var lineChart = new LineChart();
-  lineChart.render(hrData);
-}
-
-var renderBarChart = function(parsedResults){
-  var barChart = new BarChart();
-  barChart.render(parsedResults);
-}
-
 $(document).ready(function(){
+  var renderLineChart = function(parsedResults){
+    var lineChart = new LineChart();
+    lineChart.render(parsedResults);
+  }
+
+  var renderOrdinalLineChart = function(ordinalResults){
+    var lineChart = new LineChart();
+    lineChart.renderOrdinal(ordinalResults);
+  }
+
+  var renderHRChart = function(hrData){
+    var lineChart = new LineChart();
+    lineChart.render(hrData);
+  }
+
+  var renderBarChart = function(parsedResults){
+    var barChart = new BarChart();
+    barChart.render(parsedResults);
+  }
+
   $("#retrieve_user_line").on("click", function(){
     $.ajax({
       url: "/users/"+userId+"/results",

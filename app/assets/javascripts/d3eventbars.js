@@ -10,7 +10,7 @@ BarChart.prototype.render = function(parsedResults){
     console.log(y_domain)
 
   var rectanglesUpdate = svg.selectAll("rect")
-                        .data(sortedResults);
+                        .data(sortedResults)
                         .enter()
                         .append("svg:rect");
 
