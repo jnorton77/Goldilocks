@@ -9,6 +9,7 @@ Goldilocks::Application.routes.draw do
   get 'users/:id/results' => 'users#retrieve_user_responses'
   get 'users/index/heartrates' => 'users#retrieve_all_heart_rates'
   get 'users/:id/heartrates' => 'users#retrieve_user_heart_rates'
+  post 'heartrate' => 'users#avg'
 
   delete :sessions, to: redirect('/home/logout')
 
@@ -19,7 +20,7 @@ Goldilocks::Application.routes.draw do
 
   match '/users/m/:id/responses' => 'responses#mobile_create', via: :post
 
-  match '/users/99/heart_rates' => 'heart_rates#mobile_create', via: :post
+  match '/users/:id/heart_rates' => 'heart_rates#create', via: :post
 
   # match '/request' => 'responses#mobile_create', via: :get
 

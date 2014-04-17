@@ -19,3 +19,4 @@
 //= require d3heartline
 //= require d3eventbars
 //= require retrieve-user-info
+//= require show
