@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def avg
     beats = HeartRate.where(email: params[:email])
-    @avg_heart_rate = beats.inject(0) { |sum, beat| sum += beat.bpm.to_i }.to_f / beats.count
+    @avg_heart_rate = (beats.inject(0) { |sum, beat| sum += beat.bpm.to_i }.to_f / beats.count).round(4)
     @current_heart_rate = beats.last.bpm
     @lowest_heart_rate = beats.map {|beat| beat.bpm.to_i }.min
     @highest_heart_rate = beats.map {|beat| beat.bpm.to_i }.max

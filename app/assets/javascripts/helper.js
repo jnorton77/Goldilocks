@@ -13,7 +13,7 @@ var parseResponses = function(responses) {
 var parseHRates = function(heartRates) {
   var holder = [];
   for(var i=0; i<heartRates.length; i++) {
-    var date = new Date(heartRates[i]["recorded_at"])
+    var date = new Date(heartRates[i]["created_at"])
     holder.push({
       "x" : date,
       "y" : heartRates[i]["bpm"]
