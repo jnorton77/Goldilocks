@@ -20,12 +20,10 @@ LineChart.prototype.render = function(parsedResults, type){
 
     var d3PolyLine = d3.svg.line()
                           .x(function(data){
-                            console.log(data.x)
                             var xat = data.x
                             return xScale(xat);
                           })
                           .y(function(data){
-                            console.log(data.y)
                             var yat = data.y
                             return yScale(yat);
                           })
@@ -38,18 +36,6 @@ LineChart.prototype.render = function(parsedResults, type){
     var yScale = d3.scale.linear()
                           .domain(y_domain).nice()
                           .range([height, 0]);
-
-    // var plotPoints = d3.svg.selectAll("circle")
-    //                   .data(parsedResults)
-    //                   .enter()
-    //                   .append("circle")
-    //                   .attr("cx", function(d) {
-    //                     return xScale(d["x"]);
-    //                   })
-    //                   .attr("cy", function(d){
-    //                     return yScale(d["y"]);
-    //                   })
-    //                   .attr("r", 2);
 
     var xAxis = d3.svg.axis()
                       .ticks(12)
@@ -106,15 +92,15 @@ LineChart.prototype.render = function(parsedResults, type){
                   .duration(2500)
                   .attrTween('d', pathTween);
 
-  d3.svg.selectAll("circle")
-                      .data(parsedResults)
-                      .enter()
-                      .append("circle")
-                      .attr("cx", function(d) {
-                        return xScale(d["x"]);
-                      })
-                      .attr("cy", function(d){
-                        return yScale(d["y"]);
-                      })
-                      .attr("r", 10);
+  // d3.svg.selectAll("circle")
+  //                     .data(parsedResults)
+  //                     .enter()
+  //                     .append("circle")
+  //                     .attr("cx", function(d) {
+  //                       return xScale(d["x"]);
+  //                     })
+  //                     .attr("cy", function(d){
+  //                       return yScale(d["y"]);
+  //                     })
+  //                     .attr("r", 10);
 }

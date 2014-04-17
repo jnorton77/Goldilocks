@@ -4,14 +4,9 @@ $(document).ready(function(){
     lineChart.render(parsedResults);
   }
 
-  var renderOrdinalLineChart = function(ordinalResults){
-    var lineChart = new LineChart();
-    lineChart.renderOrdinal(ordinalResults);
-  }
-
   var renderHRChart = function(hrData){
     var lineChart = new LineChart();
-    lineChart.render(hrData);
+    lineChart.HRrender(hrData);
   }
 
   var renderBarChart = function(parsedResults){

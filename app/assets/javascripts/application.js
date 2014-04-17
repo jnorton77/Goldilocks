@@ -15,8 +15,10 @@
 //= require jquery_ujs
 //= require helper
 //= require underscore
-//= require _d3.min
+//= require d3.min
 //= require d3linechart
+//= require d3heartline
 //= require d3eventbars
 //= require retrieve-user-info
 //= require home
+//= require show

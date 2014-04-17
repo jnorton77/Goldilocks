@@ -13,7 +13,7 @@
 </div>
 
 <div id="personal_data">
-  <h3 style="float: right; color:red;">Average Heartrate: <span><b><%= @avg_heart_rate %></b></span></h3>
+  <div id="avg" style="float: right; color:red;"></div>
   <ul class="my_responses">
     <% responses = {1 => ["Panic", "red"],
                     2 => ["Panic Edge", "orange"],
@@ -25,3 +25,24 @@
     <% end %>
   </ul>
 </div>
+
+<script>
+  function getAvgRate() {
+    $.ajax({
+        url: "/heartrate",
+        type: "post",
+        data: { email: "<%= @user.email %>"},
+        success: function(data) {
+          $("#avg").empty();
+          $("#avg").html(data);
+        }
+      })
+  }
+
+  $(document).ready(function() {
+    getAvgRate();
+    setInterval(function(){
+      getAvgRate();
+    },1000);
+  })
+</script>
