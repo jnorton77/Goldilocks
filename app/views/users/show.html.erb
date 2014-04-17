@@ -1,5 +1,3 @@
-<!-- javascript_link_tag ... -->
-
 <%= javascript_tag do %>
   userId = <%= @user.id %>
 <% end %>
@@ -7,6 +5,11 @@
 <div id="buttons">
   <%= button_tag "User Individual Line Chart", id: "retrieve_user_line" %>
   <%= button_tag "User HR Line Chart", id: "retrieve_user_hr_line" %>
+</div>
+
+<div id="events-show-button">
+  <%= check_box_tag "events", id: "show_events" %>
+  <%= label_tag(:event_on, "Show Events") %>
 </div>
 
 <div id="personal_data">
