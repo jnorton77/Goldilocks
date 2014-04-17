@@ -3,9 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #personal_data {
-  width: 240px;
-  float: right;
-  clear: both;
+  width: 310px;
+  position:fixed;
+  right: 20px;
+  height: 280px;
+  overflow: scroll;
+  top: 280px;
+  border: 20px black solid;
 }
 
 .my_responses li {
@@ -20,13 +24,14 @@
 	background-color: lightgray;
 }
 
-#my-heart-data {
-  float: right;
+#my-heart-data-container {
+  position: fixed;
+  right: 40px;
   padding: 30px 0;
 }
 
 #user-hr-table {
-  width: 240px;
+  width: 310px;
 }
 
 #user-hr-table-caption {

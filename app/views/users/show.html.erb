@@ -7,7 +7,7 @@
   comfort = ""
 <% end %>
 
-<div id="my-heart-data"></div>
+<div id="my-heart-data-container"></div>
 
 <div id="personal_data">
   <ul class="my_responses">
@@ -34,8 +34,8 @@
         type: "post",
         data: { email: "<%= @user.email %>"},
         success: function(data) {
-          $("#my-heart-data").empty();
-          $("#my-heart-data").html(data);
+          $("#my-heart-data-container").empty();
+          $("#my-heart-data-container").html(data);
         }
       })
   }
