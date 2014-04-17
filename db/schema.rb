@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140416135038) do
+ActiveRecord::Schema.define(version: 20140417221907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,10 @@ ActiveRecord::Schema.define(version: 20140416135038) do
     t.datetime "updated_at"
     t.string   "email"
   end
+
+  add_index "heart_rates", ["bpm"], name: "index_heart_rates_on_bpm", using: :btree
+  add_index "heart_rates", ["recorded_at"], name: "index_heart_rates_on_recorded_at", using: :btree
+  add_index "heart_rates", ["user_id"], name: "index_heart_rates_on_user_id", using: :btree
 
   create_table "questions", force: true do |t|
     t.string   "content"
