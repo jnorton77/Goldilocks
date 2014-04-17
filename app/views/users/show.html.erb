@@ -1,10 +1,15 @@
 <%= javascript_tag do %>
   userId = <%= @user.id %>
+  panic = ""
+  panicEdge = ""
+  learning = ""
+  comfortEdge = ""
+  comfort = ""
 <% end %>
 
 <div id="buttons">
-  <%= button_tag "User Individual Line Chart", id: "retrieve_user_line" %>
-  <%= button_tag "User HR Line Chart", id: "retrieve_user_hr_line" %>
+  <%= button_tag "User Individual Line Chart", id: "retrieve_user_line" %><!--
+  --><%= button_tag "User HR Line Chart", id: "retrieve_user_hr_line" %>
 </div>
 
 <div id="events-show-button">
