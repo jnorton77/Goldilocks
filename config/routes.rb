@@ -9,6 +9,7 @@ Goldilocks::Application.routes.draw do
   get 'users/:id/responses' => 'users#retrieve_user_responses'
   get 'users/index/heartrates' => 'users#retrieve_all_heart_rates'
   get 'users/:id/heartrates' => 'users#retrieve_user_heart_rates'
+  post 'heartrate' => 'users#avg'
 
   delete :sessions, to: redirect('/home/logout')
 
