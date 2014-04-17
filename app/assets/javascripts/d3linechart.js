@@ -5,9 +5,9 @@ var LineChart = function() {
 LineChart.prototype.initialize = function(){
 }
 
-LineChart.prototype.render = function(parsedResults){
+LineChart.prototype.render = function(parsedResults, type){
     var margin = {top: 0, right: 0, bottom: 0, left: 0}
-    var width = 1480 - margin.left - margin.right
+    var width = 1240 - margin.left - margin.right
     var height = 900 - margin.top - margin.bottom
     var x_domain = d3.extent(parsedResults, function (d) { return d.x })
     var y_domain = d3.extent(parsedResults, function (d) { return d.y })
@@ -20,12 +20,10 @@ LineChart.prototype.render = function(parsedResults){
 
     var d3PolyLine = d3.svg.line()
                           .x(function(data){
-                            console.log(data.x)
                             var xat = data.x
                             return xScale(xat);
                           })
                           .y(function(data){
-                            console.log(data.y)
                             var yat = data.y
                             return yScale(yat);
                           })
@@ -44,17 +42,26 @@ LineChart.prototype.render = function(parsedResults){
                       .orient("bottom")
                       .scale(xScale);
 
-    var yAxis = d3.svg.axis()
+    if (type === "ordinal") {
+      var yAxis = d3.svg.axis()
+                      .ticks(5)
+                      .orient("left")
+                      .tickFormat(function (d) {
+                       return ["So dope", "Comfort", "Comfort-Learning", "Learning", "Panic-Learning", "Panic"][d]
+                      })
+                      .scale(yScale);
+    } else {
+      var yAxis = d3.svg.axis()
                       .ticks(5)
                       .orient("left")
                       .scale(yScale);
+    }
 
     var svg = d3.select("svg")
 
   svg.append("g")
       .attr("class", "x-axis")
       .attr("transform", "translate(0," + svg.attr("height") + ")")
-      .style("stroke-width", 2)
       .call(xAxis);
 
   svg.append("g")
@@ -84,4 +91,16 @@ LineChart.prototype.render = function(parsedResults){
                 .transition()
                   .duration(2500)
                   .attrTween('d', pathTween);
+
+  // d3.svg.selectAll("circle")
+  //                     .data(parsedResults)
+  //                     .enter()
+  //                     .append("circle")
+  //                     .attr("cx", function(d) {
+  //                       return xScale(d["x"]);
+  //                     })
+  //                     .attr("cy", function(d){
+  //                       return yScale(d["y"]);
+  //                     })
+  //                     .attr("r", 10);
 }
