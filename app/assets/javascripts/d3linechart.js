@@ -7,14 +7,13 @@ LineChart.prototype.initialize = function(){
 
 LineChart.prototype.render = function(parsedResults, type){
     var margin = {top: 0, right: 0, bottom: 0, left: 0}
-    var width = 1240 - margin.left - margin.right
-    var height = 900 - margin.top - margin.bottom
+    var width = 600 - margin.left - margin.right
+    var height = 600 - margin.top - margin.bottom
     var x_domain = d3.extent(parsedResults, function (d) { return d.x })
-    var y_domain = d3.extent(parsedResults, function (d) { return d.y })
+    // var y_domain = d3.extent(parsedResults, function (d) { return d.y })
 
     var svg = d3.select("body").append("svg")
-                      .attr("width", width + margin.left + margin.right)
-                      .attr("height", height + margin.top + margin.bottom)
+                      .attr("id", "user-response-chart")
                       .append("g")
                       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -34,12 +33,12 @@ LineChart.prototype.render = function(parsedResults, type){
                           .range([0, width]);
 
     var yScale = d3.scale.linear()
-                          .domain(y_domain).nice()
+                          .domain([5,1]).nice()
                           .range([height, 0]);
 
     var xAxis = d3.svg.axis()
                       .ticks(12)
-                      .orient("bottom")
+                      .orient("top")
                       .scale(xScale);
 
 
@@ -47,7 +46,7 @@ LineChart.prototype.render = function(parsedResults, type){
                     .ticks(5)
                     .orient("left")
                     .tickFormat(function (d) {
-                     return ["Comfort", "Comfort-Learning", "Learning", "Panic-Learning", "Panic"][d-1]
+                     return ["Panic", "Panic-Edge", "Learning", "Comfort-Edge", "Comfort"][d-1]
                     })
                     .scale(yScale);
 
@@ -55,7 +54,7 @@ LineChart.prototype.render = function(parsedResults, type){
 
   svg.append("g")
       .attr("class", "x-axis")
-      .attr("transform", "translate(0," + svg.attr("height") + ")")
+      .attr("transform", "translate(0,0)")
       .call(xAxis);
 
   svg.append("g")

@@ -9,11 +9,6 @@ $(document).ready(function(){
     lineChart.HRrender(hrData);
   }
 
-  var renderBarChart = function(parsedResults){
-    var barChart = new BarChart();
-    barChart.render(parsedResults);
-  }
-
   $("#retrieve_user_line").on("click", function(){
     $.ajax({
       url: "/users/"+userId+"/results",
@@ -45,37 +40,6 @@ $(document).ready(function(){
     .always(function(data) {
     });
   });
-
-  //  $("#show_events").on("click", function(){
-  //   if(($this)is(':checked')){
-  //     $.ajax({
-  //       url: "/users/"+userId+"/results",
-  //       type: "get"
-  //     })
-  //     .done(function(data){
-  //       parseEventRectangles()
-  //     })
-
-  //   } else {
-  //          // need to exit the rectangles
-  //   }
-  // });
-
-    $("#retrieve_user_vert_bar").on("click", function(){
-    $.ajax({
-      url: "/users/"+userId+"/results",
-      type: "get"
-    })
-    .done(function(data) {
-      var parsedResults = parseResponses(data)
-      renderbarChart(parsedResults)
-    })
-    .fail(function(data) {
-    })
-    .always(function(data) {
-    });
-  });
-
 });
 
 
