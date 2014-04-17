@@ -20,3 +20,4 @@
 //= require d3ordinallinechart
 //= require d3hrchart
 //= require retrieve-user-info
+//= require show
