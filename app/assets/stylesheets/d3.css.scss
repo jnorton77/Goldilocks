@@ -1,40 +1,26 @@
 svg {
-  /*margin-left: 10%;*/
-  /*padding: 20px 20px 40px 140px;*/
+  margin-left: 10%;
+  padding: 20px 20px 40px 140px;
+  padding: 20px 30px 40px 140px;
 }
 
-#barchart {
-  padding: 10px;
-  width: 80%;
-  margin-right: 10%;
-  margin-left: 10%;
-}
-
-#linegraph {
-  padding: 10px;
-  width: 80%;
-  margin-right: 10%;
-  margin-left: 10%;
-  outline: 2px green dotted;
-}
 .y-axis path,
 .y-axis line,
 .x-axis path,
 .x-axis line {
   stroke-width: 1;
-  fill: none;
-  stroke: black;
+  fill: #009999;
+  stroke: #009999;
   shape-rendering: crispEdges;
 }
 
 .y-axis text, .x-axis text {
-  font-family: sans-serif;
-  font-size: 11px;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
 }
 
 .line {
   stroke-width: 2;
-  stroke: steelblue;
+  stroke: #FF7400;
   fill: none;
 }
-
