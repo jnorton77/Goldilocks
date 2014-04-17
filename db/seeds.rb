@@ -20,9 +20,9 @@ Question.destroy_all
 Response.destroy_all
 
 
-2000.times { Response.create(answer: rand(1..5),
+100.times { Response.create(answer: rand(1..5),
 								                        question_id: 1,
-                                        user_id: rand(1..11),
+                                        email: "dave@devbootcamp.com",
                                         created_at: Date.today - rand(14).day + rand(24).hour + rand(60).minute + rand(60).second)
 
                       }
@@ -54,7 +54,7 @@ User.create(
           }
 
 1_000.times { HeartRate.create(
-                      user_id: rand(1..11),
+                      email: "dave@devbootcamp.com",
                       bpm: rand(48..210),
                       recorded_at: Date.today - rand(14).day + rand(24).hour + rand(60).minute + rand(60).second,
                       created_at: "2014-04-13 07:54:25",

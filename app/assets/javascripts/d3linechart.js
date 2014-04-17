@@ -42,20 +42,14 @@ LineChart.prototype.render = function(parsedResults, type){
                       .orient("bottom")
                       .scale(xScale);
 
-    if (type === "ordinal") {
-      var yAxis = d3.svg.axis()
-                      .ticks(5)
-                      .orient("left")
-                      .tickFormat(function (d) {
-                       return ["So dope", "Comfort", "Comfort-Learning", "Learning", "Panic-Learning", "Panic"][d]
-                      })
-                      .scale(yScale);
-    } else {
-      var yAxis = d3.svg.axis()
-                      .ticks(5)
-                      .orient("left")
-                      .scale(yScale);
-    }
+
+    var yAxis = d3.svg.axis()
+                    .ticks(5)
+                    .orient("left")
+                    .tickFormat(function (d) {
+                     return ["Comfort", "Comfort-Learning", "Learning", "Panic-Learning", "Panic"][d-1]
+                    })
+                    .scale(yScale);
 
     var svg = d3.select("svg")
 
@@ -74,7 +68,7 @@ LineChart.prototype.render = function(parsedResults, type){
         .attr("x", -20)
         .attr("dy", ".71em")
         .style("text-anchor", "end")
-        .text("Responses");
+        .text("Your Responses");
 
   var pathTween = function() {
       var interpolate = d3.scale.quantile()
@@ -92,15 +86,10 @@ LineChart.prototype.render = function(parsedResults, type){
                   .duration(2500)
                   .attrTween('d', pathTween);
 
-  // d3.svg.selectAll("circle")
-  //                     .data(parsedResults)
-  //                     .enter()
-  //                     .append("circle")
-  //                     .attr("cx", function(d) {
-  //                       return xScale(d["x"]);
-  //                     })
-  //                     .attr("cy", function(d){
-  //                       return yScale(d["y"]);
-  //                     })
-  //                     .attr("r", 10);
+  var circles =  svg.selectAll("circle")
+                    .data(parsedResults)
+                    .enter().append("circle")
+                    .attr("cx", function(d) { return xScale (d["x"]) })
+                    .attr("cy", function(d) { return yScale (d["y"]) })
+                    .attr("r", 2);
 }

@@ -57,7 +57,7 @@ LineChart.prototype.HRrender = function(hrData){
         .attr("x", -20)
         .attr("dy", ".71em")
         .style("text-anchor", "end")
-        .text("Responses");
+        .text("Beats Per Minute");
 
   var pathTween = function() {
       var interpolate = d3.scale.quantile()
