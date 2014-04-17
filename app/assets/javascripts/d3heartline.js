@@ -79,6 +79,6 @@ LineChart.prototype.HRrender = function(hrData){
                     .data(hrData)
                     .enter().append("circle")
                     .attr("cx", function(d) { return xScale (d["x"]) })
-                    .attr("cy", function(d) { return yScale (git d["y"]) })
+                    .attr("cy", function(d) { return yScale (d["y"]) })
                     .attr("r", 2);
 }
