@@ -17,8 +17,9 @@
   <%= label_tag(:event_on, "Show Events") %>
 </div>
 
+<div id="my-heart-data" style="float: right;"></div>
+
 <div id="personal_data">
-  <div id="avg" style="float: right; color:red;"></div>
   <ul class="my_responses">
     <% responses = {1 => ["Panic", "red"],
                     2 => ["Panic Edge", "orange"],
@@ -38,8 +39,8 @@
         type: "post",
         data: { email: "<%= @user.email %>"},
         success: function(data) {
-          $("#avg").empty();
-          $("#avg").html(data);
+          $("#my-heart-data").empty();
+          $("#my-heart-data").html(data);
         }
       })
   }
