@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   def retrieve_user_responses
     @user = User.find(params[:id])
-    render json: Response.where(:user_id => params[:id])
+    render json: Response.where(:email => @user.email)
   end
 
   def retrieve_all_responses
@@ -28,6 +28,6 @@ class UsersController < ApplicationController
 
   def retrieve_user_heart_rates
     @user = User.find(params[:id])
-    render json: HeartRate.where(:user_id => params[:id])
+    render json: HeartRate.where(:email => @user.email)
   end
 end
