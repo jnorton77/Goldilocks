@@ -28,3 +28,24 @@ svg {
   stroke: #FF7400;
   fill: none;
 }
+
+#user-heartrate-chart {
+  height: 600px;
+  width: 600px;
+  float: left;
+}
+
+#user-response-chart {
+  height: 600px;
+  width: 600px;
+  float: left;
+}
+
+.x-axis > .tick > text {
+  font-size: 12px;
+}
+
+.y-axis > .tick > text {
+  font-size: 14px;
+}
+

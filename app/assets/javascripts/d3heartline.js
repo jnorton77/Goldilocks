@@ -1,13 +1,12 @@
 LineChart.prototype.HRrender = function(hrData){
-    var margin = {top: 0, right: 0, bottom: 0, left: 0}
-    var width = 1480 - margin.left - margin.right
-    var height = 900 - margin.top - margin.bottom
+    var margin = {top: 0, right: 0, bottom: 10, left: 0}
+    var width = 1080 - margin.left - margin.right
+    var height = 500 - margin.top - margin.bottom
     var x_domain = d3.extent(hrData, function (d) { return d.x })
     var y_domain = d3.extent(hrData, function (d) { return +d.y })
 
     var svg = d3.select("body").append("svg")
-                      .attr("width", width + margin.left + margin.right)
-                      .attr("height", height + margin.top + margin.bottom)
+                      .attr("id", "user-heartrate-chart")
                       .append("g")
                       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -21,7 +20,7 @@ LineChart.prototype.HRrender = function(hrData){
 
     var xAxis = d3.svg.axis()
                       .ticks(12)
-                      .orient("bottom")
+                      .orient("top")
                       .scale(xScale);
 
     var yAxis = d3.svg.axis()
@@ -44,12 +43,11 @@ LineChart.prototype.HRrender = function(hrData){
 
   svg.append("g")
       .attr("class", "x-axis")
-      .attr("transform", "translate(0," + svg.attr("height") + ")")
+      .attr("transform", "translate(0, 0)")
       .call(xAxis);
 
   svg.append("g")
         .attr("class", "y-axis")
-        .style("stroke-width", 2)
         .call(yAxis)
       .append("text")
         .attr("transform", "rotate(-90)")

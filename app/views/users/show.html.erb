@@ -7,17 +7,7 @@
   comfort = ""
 <% end %>
 
-<div id="buttons">
-  <%= button_tag "User Individual Line Chart", id: "retrieve_user_line" %><!--
-  --><%= button_tag "User HR Line Chart", id: "retrieve_user_hr_line" %>
-</div>
-
-<div id="events-show-button">
-  <%= check_box_tag "events", id: "show_events" %>
-  <%= label_tag(:event_on, "Show Events") %>
-</div>
-
-<div id="my-heart-data" style="float: right;"></div>
+<div id="my-heart-data"></div>
 
 <div id="personal_data">
   <ul class="my_responses">
@@ -32,7 +22,12 @@
   </ul>
 </div>
 
-<script>
+<div id="buttons">
+  <%= button_tag "User Individual Line Chart", id: "retrieve_user_line" %><!--
+  --><%= button_tag "User HR Line Chart", id: "retrieve_user_hr_line" %>
+</div>
+
+<script>                                // this should really be a js file
   function getAvgRate() {
     $.ajax({
         url: "/heartrate",
@@ -49,6 +44,6 @@
     getAvgRate();
     setInterval(function(){
       getAvgRate();
-    },1000);
+    },3000);
   })
 </script>

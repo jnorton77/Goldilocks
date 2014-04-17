@@ -21,11 +21,12 @@ Response.destroy_all
 
 
 100.times { Response.create(answer: rand(1..5),
+                                        user_id: 1,
 								                        question_id: 1,
                                         email: "dave@devbootcamp.com",
                                         created_at: Date.today - rand(14).day + rand(24).hour + rand(60).minute + rand(60).second)
-
                       }
+
 Question.create(
                 content: "How would you characterize your frame of mind?",
                 created_at: "2014-03-01 07:55:25",
@@ -54,10 +55,9 @@ User.create(
           }
 
 1_000.times { HeartRate.create(
+                      user_id: 1,
                       email: "dave@devbootcamp.com",
                       bpm: rand(48..210),
-                      recorded_at: Date.today - rand(14).day + rand(24).hour + rand(60).minute + rand(60).second,
-                      created_at: "2014-04-13 07:54:25",
-                      updated_at: "2014-04-13 07:54:25"
+                      created_at: Date.today - rand(14).day + rand(24).hour + rand(60).minute + rand(60).second,
                       )
               }

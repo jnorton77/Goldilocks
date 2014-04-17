@@ -21,34 +21,3 @@ var parseHRates = function(heartRates) {
   }
   return (_.sortBy(holder, function(object){return object.x}));
 }
-
-
-// var parseEventRectangles = function(events) {
-//   var holder = [];
-//   for(var i=0; i<events.length; i++) {
-//     var beginTime = new Date(event[i]["beginTime"])
-//     var endTime = new Date(event)[i]["endTime"]
-//     holder.push({
-//       "x" : date,
-//       "width" : beginTime - endTime
-//       "y" : 900
-//     })
-//   }
-//   console.log(_.sortBy(holder, function(object){return object.x}))
-//   return (_.sortBy(holder, function(object){return object.x}));
-// }
-
-var parseEventRectangles = function(events) {
-  var holder = [];
-  for(var i=0; i<events.length; i++) {
-    var beginTime = new Date(event[i]["beginTime"])
-    var endTime = new Date(event)[i]["endTime"]
-    holder.push({
-      "x" : date,
-      "width" : beginTime - endTime,
-      "y" : 900
-    })
-  }
-  console.log(_.sortBy(holder, function(object){return object.x}))
-  return (_.sortBy(holder, function(object){return object.x}));
-}
