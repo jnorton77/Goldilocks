@@ -2,18 +2,18 @@
 
 $(function() {
 
-    var quotes = $(".quotes");
-    var quoteIndex = -1;
+    // var quotes = $(".quotes");
+    // var quoteIndex = -1;
 
-    function showNextQuote() {
-        ++quoteIndex;
-        quotes.eq(quoteIndex % quotes.length)
-            .fadeIn(2000)
-            .delay(2000)
-            .fadeOut(2000, showNextQuote);
-    }
+    // function showNextQuote() {
+    //     ++quoteIndex;
+    //     quotes.eq(quoteIndex % quotes.length)
+    //         .fadeIn(2000)
+    //         .delay(2000)
+    //         .fadeOut(2000, showNextQuote);
+    // }
 
-    showNextQuote();
+    // showNextQuote();
 
     HorizontalBarGraph = function(el, series) {
   this.el = d3.select(el);
@@ -138,6 +138,7 @@ function drawDonutChart(element, percent, width, height, text_y) {
 
   var svg = d3.select(element).append("svg")
         .attr("width", width)
+        .attr("class", "my-donut")
         .attr("height", height)
         .append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
