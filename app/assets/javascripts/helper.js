@@ -19,7 +19,6 @@ var parseHRates = function(heartRates) {
       "y" : heartRates[i]["bpm"]
     })
   }
-  console.log(_.sortBy(holder, function(object){return object.x}))
   return (_.sortBy(holder, function(object){return object.x}));
 }
 
@@ -30,7 +29,7 @@ var parseEventRectangles = function(events) {
     var endTime = new Date(event)[i]["endTime"]
     holder.push({
       "x" : date,
-      "width" : beginTime - endTime
+      "width" : beginTime - endTime,
       "y" : 900
     })
   }

@@ -4,14 +4,9 @@ $(document).ready(function(){
     lineChart.render(parsedResults);
   }
 
-  var renderOrdinalLineChart = function(ordinalResults){
-    var lineChart = new LineChart();
-    lineChart.renderOrdinal(ordinalResults);
-  }
-
   var renderHRChart = function(hrData){
     var lineChart = new LineChart();
-    lineChart.render(hrData);
+    lineChart.HRrender(hrData);
   }
 
   var renderBarChart = function(parsedResults){
@@ -33,14 +28,6 @@ $(document).ready(function(){
     })
     .always(function(data) {
     });
-  });
-
-   $("#show_events").change(function(){
-    if ($this)is(':checked'){
-      parseEventRectangles()
-    } else {
-           // need to exit the rectangles
-    }
   });
 
   $("#retrieve_user_hr_line").on("click", function(){
