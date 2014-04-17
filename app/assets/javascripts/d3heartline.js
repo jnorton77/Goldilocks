@@ -1,7 +1,7 @@
 LineChart.prototype.HRrender = function(hrData){
     var margin = {top: 0, right: 0, bottom: 10, left: 0}
     var width = 900 - margin.left - margin.right
-    var height = 900 - margin.top - margin.bottom
+    var height = 640 - margin.top - margin.bottom
     var x_domain = d3.extent(hrData, function (d) { return d.x })
     var y_domain = d3.extent(hrData, function (d) { return +d.y })
 
@@ -16,7 +16,7 @@ LineChart.prototype.HRrender = function(hrData){
 
     var yScale = d3.scale.linear()
                           .domain(y_domain).nice()
-                          .range([height, 0]);
+                          .range([height, 0]); 
 
     var xAxis = d3.svg.axis()
                       .ticks(12)
