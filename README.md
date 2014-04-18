@@ -5,7 +5,7 @@ Equanimity (AKA Project Goldilocks)
 
 [![Coverage Status](https://coveralls.io/repos/chiefbigfro/Goldilocks/badge.png)](https://coveralls.io/r/chiefbigfro/Goldilocks)
 
-> EQUANIMITY - a distributed running club for the web.
+> EQUANIMITY
 
 <http://equanimity.herokuapp.com>
 
