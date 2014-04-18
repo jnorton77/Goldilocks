@@ -54,7 +54,7 @@ User.create(
                       )
           }
 
-1_000.times { HeartRate.create(
+15_000.times { HeartRate.create(
                       user_id: 1,
                       email: "dave@devbootcamp.com",
                       bpm: rand(48..210),

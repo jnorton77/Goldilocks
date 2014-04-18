@@ -31,6 +31,6 @@ class UsersController < ApplicationController
 
   def retrieve_user_heart_rates
     @user = User.find(params[:id])
-    render json: HeartRate.where(:email => @user.email)
+    render json: HeartRate.where(:email => @user.email).select(:created_at, :bpm)
   end
 end
