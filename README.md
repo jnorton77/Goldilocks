@@ -7,7 +7,7 @@ Equanimity (AKA Project Goldilocks)
 
 > EQUANIMITY - a distributed running club for the web.
 
-<http://equanimity,herokuapp.com>
+<http://equanimity.herokuapp.com>
 
 Created by:
 
