@@ -5,6 +5,7 @@ Goldilocks::Application.routes.draw do
   get 'results/today' => 'home#today'
   get 'results/yesterday' => 'home#yesterday'
   get 'results/thisWeek' => 'home#this_week'
+  get 'results/all-time' => 'home#all_time'
   get 'users/index/results' => 'users#retrieve_all_responses'
   get 'users/:id/results' => 'users#retrieve_user_responses'
   get 'users/index/heartrates' => 'users#retrieve_all_heart_rates'

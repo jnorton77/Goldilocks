@@ -11,6 +11,16 @@ class HomeController < ApplicationController
     render 'index'
   end
 
+  def all_time
+    @all_responses = Response.where(created_at: (Time.now.to_datetime - 1.day..Time.now.to_datetime)).count == 0 ? 1 : Response.where(created_at: (Time.now.to_datetime - 1.day..Time.now.to_datetime)).count
+    @panic = Response.where(answer: 1).count
+    @panic_edge = Response.where(answer: 2).count
+    @learning = Response.where(answer: 3).count
+    @comfort_edge = Response.where(answer: 4).count
+    @comfort = Response.where(answer: 5).count
+    render 'index'
+  end
+
   def today
   	@all_responses = Response.where(created_at: (Time.now.to_datetime - 1.day..Time.now.to_datetime)).count == 0 ? 1 : Response.where(created_at: (Time.now.to_datetime - 1.day..Time.now.to_datetime)).count
   	@panic = Response.where(answer: 1, created_at: (Time.now.to_datetime - 1.day..Time.now.to_datetime)).count
