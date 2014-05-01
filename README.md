@@ -29,6 +29,7 @@ It incorporates two iOS apps – as well as Bluetooth Low Energy heart rate moni
 Equanimity is currently a proof of concept prototype, but we believe it could become a viable biofeedback tool for monitoring physiological stress with the aim of alerting users – in real time – to changes in emotional states.
 
 GITHUB REPOS:
+
 <https://github.com/chiefbigfro/Goldilocks> (Rails App)
 
 <https://github.com/Databates/RubyMotion_heartmonitor> (Ruby Motion iOS app)
