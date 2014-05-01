@@ -30,7 +30,7 @@ Equanimity is currently a proof of concept prototype, but we believe it could be
 
 GITHUB REPOS:
 <https://github.com/chiefbigfro/Goldilocks>  (Rails App)
-<https://github.com/Databates/ruby_motion_4_14_14>   (Ruby Motion iOS app)
+<https://github.com/Databates/RubyMotion_heartmonitor>   (Ruby Motion iOS app)
 <https://github.com/jnorton77/Xcode_heartmonitor>   (Objective-C iOS app)
 
 <http://equanimity.herokuapp.com>
